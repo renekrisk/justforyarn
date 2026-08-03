@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
               <img
                 src="/logo.png"
                 alt="Ink Coaching"
-                style={{ height: '48px', width: 'auto', display: 'block', filter: 'brightness(0) invert(1)' }}
+                style={{ height: '52px', width: 'auto', display: 'block', filter: 'brightness(0) invert(1)' }}
               />
             </div>
             <p style={{ color: '#9A9A9A', fontSize: '14px', lineHeight: 1.75, maxWidth: '280px' }}>

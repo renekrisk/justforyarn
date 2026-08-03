@@ -100,12 +100,12 @@ const Header: React.FC = () => {
             aria-label="Ink Coaching Vuka — Home"
           >
             <img
-              src="/logo.png"
+              src="/vukalogo.png"
               alt="Ink Coaching"
-              width={200}
-              height={54}
+              width={216}
+              height={58}
               style={{
-                height:    '54px',   /* 5% larger than before */
+                height:    '58px',   /* 8% larger than before */
                 width:     'auto',
                 display:   'block',
                 imageRendering: 'crisp-edges',
