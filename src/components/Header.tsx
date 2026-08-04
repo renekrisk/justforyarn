@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { Icon } from './Icon';
 
 /* ─── Brand constants ──────────────────────────────────────── */
 const PHONES = [
@@ -43,14 +44,14 @@ const Header: React.FC = () => {
   const navLinks = [
     { label: 'Home',           path: '/' },
     { label: 'About',          path: '/about' },
-    { label: 'For Candidates', path: '/candidates' },
-    { label: 'For Employers',  path: '/employers' },
+    { label: 'For Youth',      path: '/candidates' },
+    { label: 'For Partners',   path: '/employers' },
     { label: 'Contact Us',     path: '/contact' },
   ];
 
   const programsLinks = [
-    { label: 'Candidate Training',    path: '/training' },
-    { label: 'Ink Coaching Courses',  path: '/courses'  },
+    { label: 'Digital Skills Training',  path: '/training' },
+    { label: 'INK Coaching Courses',     path: '/courses'  },
   ];
 
   const isActive          = (path: string) => location.pathname === path;
@@ -97,7 +98,7 @@ const Header: React.FC = () => {
           <Link
             to="/"
             style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}
-            aria-label="Ink Coaching Vuka — Home"
+            aria-label="VUKA Youth Connect — Home"
           >
             <img
               src="/vukalogo.png"
@@ -276,13 +277,12 @@ const Header: React.FC = () => {
             aria-expanded={menuOpen}
             style={{
               display:    'block',
-              fontSize:   '22px',
               color:      '#1a1a1a',
               padding:    '4px',
               lineHeight: 1,
             }}
           >
-            {menuOpen ? '✕' : '☰'}
+            {menuOpen ? <Icon name="close" size={22} /> : <Icon name="menu" size={22} />}
           </button>
         </div>
 

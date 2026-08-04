@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const footerLinks = [
-    { heading: 'Platform', links: [
-      { label: 'Home',           path: '/' },
-      { label: 'Find Jobs',      path: '/jobs' },
-      { label: 'For Candidates', path: '/candidates' },
-      { label: 'For Employers',  path: '/employers' },
+    { heading: 'Programme', links: [
+      { label: 'Home',              path: '/' },
+      { label: 'About VUKA',        path: '/about' },
+      { label: 'For Youth',         path: '/candidates' },
+      { label: 'For Partners',      path: '/employers' },
     ]},
-    { heading: 'Training', links: [
-      { label: 'Corporate Readiness',     path: '/training' },
-      { label: 'DiSC Assessment',         path: '/training' },
-      { label: 'Emotional Intelligence',  path: '/training' },
-      { label: 'Conflict Management',     path: '/training' },
+    { heading: 'Skills & Training', links: [
+      { label: 'Digital Skills',          path: '/training' },
+      { label: 'Marketplace Readiness',   path: '/training' },
+      { label: 'Remote Work Prep',        path: '/training' },
+      { label: 'Entrepreneurship',        path: '/training' },
     ]},
     { heading: 'Contact', links: [
       { label: 'info@inkcoaching.co.ke', path: 'mailto:info@inkcoaching.co.ke' },
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
               />
             </div>
             <p style={{ color: '#9A9A9A', fontSize: '14px', lineHeight: 1.75, maxWidth: '280px' }}>
-              Connecting vetted, pre-trained talent to top employers across East Africa. Powered by Ink Coaching's training excellence.
+              Empowering refugee and host community youth in Turkana and Garissa to access real, paid digital work opportunities. Powered by INK Coaching.
             </p>
           </div>
 
@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
           gap: '16px',
         }}>
           <p style={{ fontSize: '12px', color: '#555555' }}>
-            © {new Date().getFullYear()} Ink Coaching Limited. All rights reserved.
+            © {new Date().getFullYear()} INK Coaching Limited — VUKA Youth Connect Programme. All rights reserved.
           </p>
           <div style={{ display: 'flex', gap: '24px' }}>
             <a href="#" style={{ fontSize: '12px', color: '#555555' }} className="f-link">Privacy Policy</a>

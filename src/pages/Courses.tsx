@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Icon } from '../components/Icon';
 
 interface Course {
   id: string;
@@ -550,7 +551,7 @@ const Courses: React.FC = () => {
                 onMouseEnter={e => e.currentTarget.style.color = '#000000'}
                 onMouseLeave={e => e.currentTarget.style.color = '#999999'}
               >
-                ✕
+                <Icon name="close" size={16} />
               </button>
             </div>
 
@@ -583,7 +584,7 @@ const Courses: React.FC = () => {
                       alignItems: 'center',
                       justifyContent: 'center'
                     }}>
-                      {isCompleted ? '✓' : s.step}
+                      {isCompleted ? <Icon name="check" size={12} /> : s.step}
                     </span>
                     <span style={{
                       fontSize: '12px',
@@ -1025,7 +1026,7 @@ const Courses: React.FC = () => {
                     fontSize: '32px',
                     fontWeight: 'bold'
                   }}>
-                    ✓
+                    <Icon name="check" size={32} />
                   </div>
                   
                   <div>

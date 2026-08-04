@@ -1,46 +1,55 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { Icon } from '../components/Icon';
 
-const CYCLING_WORDS = ['Opportunity.', 'Excellence.', 'Purpose.', 'Growth.'];
+const CYCLING_WORDS = ['Opportunity.', 'Inclusion.', 'Purpose.', 'Impact.'];
 
 const MARQUEE_ITEMS = [
-  'Pre-Trained Talent', 'DiSC Certified', 'EQ Frameworks',
-  'East Africa', '98% Retention', '10+ Years', 'Corporate Ready',
-  '31+ Facilitators', 'Psychometric Vetting', 'Placement Guaranteed',
-  'Pre-Trained Talent', 'DiSC Certified', 'EQ Frameworks',
-  'East Africa', '98% Retention', '10+ Years', 'Corporate Ready',
-  '31+ Facilitators', 'Psychometric Vetting', 'Placement Guaranteed',
+  'Turkana & Garissa', 'Refugee Youth', 'Digital Marketplace', 'PROSPECTS Kenya',
+  'ILO Backed', 'Host Communities', '4-Phase Programme', 'Decent Work',
+  '40% Women Target', 'Kakuma & Dadaab', 'INK Coaching', 'SANARA Alumni',
+  'Turkana & Garissa', 'Refugee Youth', 'Digital Marketplace', 'PROSPECTS Kenya',
+  'ILO Backed', 'Host Communities', '4-Phase Programme', 'Decent Work',
+  '40% Women Target', 'Kakuma & Dadaab', 'INK Coaching', 'SANARA Alumni',
 ];
 
 const STATS = [
-  { num: '10+',  label: 'Years of Coaching Excellence' },
-  { num: '31+',  label: 'Professional Facilitators' },
-  { num: '98%',  label: 'Candidate Retention Rate' },
-  { num: '100%', label: 'Pre-Trained Before Placement' },
+  { num: '200+', label: 'Youth Targeted for Digital Marketplace' },
+  { num: '28',   label: 'Month Programme Duration' },
+  { num: '40%',  label: 'Minimum Women Participation' },
+  { num: '10+',  label: 'Years of INK Coaching Excellence' },
 ];
 
 const STEPS = [
   {
     n: '01',
-    title: 'Source and Screen',
-    body: 'Candidates submit profiles through Vuka. Ink Coaching screens them on core professional potential, attitude, and sector alignment, not just qualifications.',
+    title: 'Talent Identification',
+    body: 'We identify high-potential youth from underserved and marginalized communities in Turkana and Garissa — including refugees and host community members — through community outreach, partnerships, and localized engagement.',
   },
   {
     n: '02',
-    title: 'Coach and Certify',
-    body: 'Screened candidates enter structured training: corporate alignment, emotional intelligence, DiSC psychometrics, and role-specific bootcamps built around employer specifications.',
+    title: 'Digital Skills Enhancement',
+    body: 'Selected participants undergo structured training to strengthen digital competencies, remote work preparedness, marketplace readiness, and professional communication aligned with real market demand.',
   },
   {
     n: '03',
-    title: 'Place and Deliver',
-    body: 'Certified graduates are matched and presented to employers. A placement commission is charged only once the candidate is successfully positioned and retained.',
+    title: 'Employer Matching & Market Activation',
+    body: 'Participants are connected to verified work opportunities on the VUKA digital marketplace — including artisan, home-based, creative, repair, beauty, and digital profile-based services.',
+  },
+  {
+    n: '04',
+    title: 'Sustainability Through the VUKA Platform',
+    body: 'The VUKA platform serves as a continuous hub linking youth to opportunities, mentorship, employers, investors, trainers, and peer learning networks — for long-term, sustainable economic participation.',
   },
 ];
 
-const JOBS = [
-  { title: 'Management Trainee',  company: 'Human Asset Consultants Ltd', loc: 'Nairobi',  type: 'Full-time', track: 'Corporate Leadership' },
-  { title: 'Financial Analyst',    company: 'Equity Bank Limited',         loc: 'Mombasa',  type: 'Full-time', track: 'DiSC Assessment' },
-  { title: 'Customer Success Rep', company: 'Boma Project Agency',         loc: 'Nanyuki',  type: 'Full-time', track: 'EQ & Conflict Mgmt' },
+const SERVICE_CATEGORIES = [
+  { title: 'Artisan & Technical Services',    desc: 'Skilled tradespeople, technicians, and craft workers connecting with clients through verified digital profiles.', icon: <Icon name="wrench" size={32} /> },
+  { title: 'Home & Community Services',        desc: 'Cleaning, caregiving, delivery, and other home-based service providers serving local demand.', icon: <Icon name="house" size={32} /> },
+  { title: 'Creative & Freelance',             desc: 'Graphic design, content creation, photography, and digital media work accessible to talent in remote counties.', icon: <Icon name="palette" size={32} /> },
+  { title: 'Beauty & Wellness',                desc: 'Hair, beauty, wellness, and personal care providers with visibility to clients through the VUKA platform.', icon: <Icon name="sparkle" size={32} /> },
+  { title: 'Repair & Maintenance',             desc: 'Electronics, appliance, and infrastructure repair workers reaching customers through digital intermediation.', icon: <Icon name="gear" size={32} /> },
+  { title: 'Digital Profile Services',         desc: 'Remote-enabled digital workers offering data entry, admin support, and platform-based business functions.', icon: <Icon name="laptop" size={32} /> },
 ];
 
 function useReveal() {
@@ -127,7 +136,7 @@ function AnimatedStat({ num, label }: { num: string; label: string }) {
         fontWeight: 400,
         letterSpacing: '0.03em',
         lineHeight: 1.5,
-        maxWidth: '130px',
+        maxWidth: '140px',
         margin: '14px auto 0',
         opacity: visible ? 1 : 0,
         transition: 'opacity 0.7s ease 0.2s',
@@ -157,22 +166,22 @@ const Home: React.FC = () => {
               fontFamily: 'var(--font-body)', fontSize: '11px',
               fontWeight: 500, textTransform: 'uppercase',
               letterSpacing: '0.22em', color: '#999',
-            }}>Ink Coaching</span>
+            }}>INK Coaching</span>
             <span style={{ width: '28px', height: '1px', background: '#ccc', display: 'inline-block' }} />
             <span style={{
               fontFamily: 'var(--font-body)', fontSize: '11px',
               fontWeight: 500, textTransform: 'uppercase',
               letterSpacing: '0.22em', color: '#999',
-            }}>Vuka Careers Portal</span>
+            }}>VUKA Youth Connect</span>
           </div>
 
           <div className="hero-text" style={{ maxWidth: '920px', marginBottom: '52px' }}>
             <h1 style={{ fontWeight: 700, lineHeight: 1.0, letterSpacing: '-0.04em', color: '#000' }}>
               <span style={{ display: 'block', animation: 'heroFadeUp 1s 0.15s cubic-bezier(0.25,0.46,0.45,0.94) both' }}>
-                Where Trained
+                Where Youth
               </span>
               <span style={{ display: 'block', animation: 'heroFadeUp 1s 0.3s cubic-bezier(0.25,0.46,0.45,0.94) both' }}>
-                Talent Meets
+                Meet Digital
               </span>
               <span style={{ display: 'block', animation: 'heroFadeUp 1s 0.45s cubic-bezier(0.25,0.46,0.45,0.94) both' }}>
                 <CyclingWord words={CYCLING_WORDS} />
@@ -186,20 +195,18 @@ const Home: React.FC = () => {
             animation: 'heroFadeUp 1s 0.6s cubic-bezier(0.25,0.46,0.45,0.94) both',
           }}>
             <p className="hero-paragraph" style={{
-              maxWidth: '440px', fontSize: '17px', lineHeight: 1.85,
+              maxWidth: '480px', fontSize: '17px', lineHeight: 1.85,
               color: '#555', fontWeight: 400,
             }}>
-              Vuka is Ink Coaching's careers branch. We train candidates to corporate
-              standards, vet them through psychometric and EQ frameworks, and deliver
-              fully operational professionals to employers across East Africa.
+              VUKA Youth Connect is INK Coaching's digital marketplace programme empowering refugee and host community youth in Turkana and Garissa to access real, paid work opportunities through the VUKA platform.
             </p>
             <div className="hero-btns" style={{ display: 'flex', gap: '14px', alignItems: 'center', flexWrap: 'wrap', paddingTop: '4px' }}>
-              <Link to="/jobs" className="btn btn-red">Find a Placement</Link>
-              <Link to="/employers" className="btn btn-outline">Hire Vetted Talent</Link>
+              <Link to="/candidates" className="btn btn-red">Join the Programme</Link>
+              <Link to="/employers" className="btn btn-outline">Partner With Us</Link>
             </div>
           </div>
 
-          {/* Mobile Hero Stats - Apple style integration */}
+          {/* Mobile Hero Stats */}
           <div className="mobile-hero-stats" style={{
             display: 'none',
             gridTemplateColumns: 'repeat(2, 1fr)',
@@ -247,18 +254,18 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
+      {/* HOW IT WORKS — 4 PHASES */}
       <section className="process-section" style={{ padding: '140px 0', background: '#fff' }}>
         <div className="container">
           <div style={{ marginBottom: '80px' }} data-reveal>
-            <span className="eyebrow">The Process</span>
-            <h2 style={{ color: '#000', lineHeight: 1.05, maxWidth: '480px' }}>
-              Three steps.<br />
-              <em style={{ fontStyle: 'italic', fontWeight: 400 }}>One outcome.</em>
+            <span className="eyebrow">The Programme</span>
+            <h2 style={{ color: '#000', lineHeight: 1.05, maxWidth: '520px' }}>
+              Four phases.<br />
+              <em style={{ fontStyle: 'italic', fontWeight: 400 }}>One sustainable future.</em>
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '56px' }} className="steps-grid">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '40px' }} className="steps-grid">
             {STEPS.map((step, i) => (
               <div key={i} data-reveal data-delay={String(i + 1)}>
                 <div style={{
@@ -268,59 +275,45 @@ const Home: React.FC = () => {
                 }}>
                   {step.n}
                 </div>
-                <h3 style={{ fontSize: '22px', color: '#000', marginBottom: '14px', fontWeight: 600 }}>
+                <h3 style={{ fontSize: '18px', color: '#000', marginBottom: '14px', fontWeight: 600 }}>
                   {step.title}
                 </h3>
-                <p style={{ fontSize: '15px', color: '#666', lineHeight: 1.8 }}>{step.body}</p>
+                <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.8 }}>{step.body}</p>
               </div>
             ))}
           </div>
 
-          <div style={{ marginTop: '64px' }} data-reveal data-delay="4">
-            <Link to="/candidates" className="btn btn-red btn-sm">See Full Process</Link>
+          <div style={{ marginTop: '64px' }} data-reveal data-delay="5">
+            <Link to="/candidates" className="btn btn-red btn-sm">Apply to the Programme</Link>
           </div>
         </div>
       </section>
 
-      {/* OPEN PLACEMENTS */}
+      {/* SERVICE CATEGORIES */}
       <section style={{ padding: '140px 0', background: '#F6F6F6' }}>
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '56px', flexWrap: 'wrap', gap: '20px' }} data-reveal>
             <div>
-              <span className="eyebrow">Opportunities</span>
-              <h2 style={{ color: '#000', lineHeight: 1.05 }}>Current Vetted Roles</h2>
+              <span className="eyebrow">The Marketplace</span>
+              <h2 style={{ color: '#000', lineHeight: 1.05 }}>Digital Service Categories</h2>
             </div>
-            <Link to="/jobs" className="btn btn-outline btn-sm">View All Roles</Link>
+            <Link to="/candidates" className="btn btn-outline btn-sm">Register as a Provider</Link>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-            {JOBS.map((job, i) => (
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }} className="services-grid">
+            {SERVICE_CATEGORIES.map((cat, i) => (
               <div key={i} data-reveal data-delay={String(i + 1)}
                 style={{
-                  background: '#fff', padding: '32px 40px',
-                  display: 'grid', gridTemplateColumns: '1fr auto',
-                  alignItems: 'center', gap: '32px',
+                  background: '#fff', padding: '36px 32px',
                   transition: 'box-shadow 0.3s ease, transform 0.3s ease',
                 }}
-                className="job-card"
+                className="service-card"
               >
-                <div>
-                  <h3 style={{ fontSize: '20px', color: '#000', marginBottom: '8px', fontWeight: 600 }}>
-                    {job.title}
-                  </h3>
-                  <div style={{
-                    fontFamily: 'var(--font-body)', fontSize: '13px', color: '#888',
-                    display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '12px', alignItems: 'center',
-                  }}>
-                    <span>{job.company}</span>
-                    <span style={{ color: '#ccc' }}>·</span>
-                    <span>{job.loc}</span>
-                    <span style={{ color: '#ccc' }}>·</span>
-                    <span>{job.type}</span>
-                  </div>
-                  <span className="badge badge-grey">{job.track}</span>
-                </div>
-                <Link to="/jobs" className="btn btn-red btn-sm">Apply</Link>
+                <div style={{ marginBottom: '16px' }}>{cat.icon}</div>
+                <h3 style={{ fontSize: '17px', color: '#000', marginBottom: '10px', fontWeight: 600 }}>
+                  {cat.title}
+                </h3>
+                <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.75 }}>{cat.desc}</p>
               </div>
             ))}
           </div>
@@ -336,7 +329,7 @@ const Home: React.FC = () => {
               letterSpacing: '0.2em', textTransform: 'uppercase', color: '#444',
               display: 'block', marginBottom: '44px',
             }}>
-              Candidate Story
+              Participant Story
             </span>
             <blockquote style={{
               fontFamily: 'var(--font-head)',
@@ -345,23 +338,21 @@ const Home: React.FC = () => {
               color: '#fff', lineHeight: 1.55, marginBottom: '52px',
               letterSpacing: '-0.01em',
             }}>
-              "Vuka didn't just send me to an interview. The DiSC assessment revealed how
-              I work best, and the corporate bootcamp made me operational before my first
-              day. My manager said I was the most prepared hire they'd had in years."
+              "The VUKA platform gave me visibility I never had. Within two months of being onboarded, I had my first three paid clients and I was finally earning consistently from my tailoring skills — right here in Kakuma."
             </blockquote>
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
               <div style={{
                 width: '46px', height: '46px', borderRadius: '50%',
-                background: '#fff', display: 'flex', alignItems: 'center',
+                background: '#D11F5E', display: 'flex', alignItems: 'center',
                 justifyContent: 'center', fontFamily: 'var(--font-body)',
-                fontWeight: 700, fontSize: '13px', color: '#000', flexShrink: 0,
-              }}>MK</div>
+                fontWeight: 700, fontSize: '13px', color: '#fff', flexShrink: 0,
+              }}>FA</div>
               <div>
                 <div style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: '14px', color: '#fff' }}>
-                  Martin K.
+                  Fatuma A.
                 </div>
                 <div style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: '#555' }}>
-                  Operations Specialist, Placed 2024
+                  Artisan Provider, Kakuma — Activated 2025
                 </div>
               </div>
             </div>
@@ -369,20 +360,62 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* INCLUSION TARGETS */}
+      <section style={{ background: '#fff', padding: '120px 0', borderTop: '1px solid #E8E8E8' }}>
+        <div className="container">
+          <div style={{ marginBottom: '64px', textAlign: 'center' }} data-reveal>
+            <span className="eyebrow">Our Commitment</span>
+            <h2 style={{ color: '#000', maxWidth: '560px', margin: '0 auto', lineHeight: 1.1 }}>
+              Inclusion by design,<br />
+              <em style={{ fontStyle: 'italic', fontWeight: 400 }}>not by afterthought.</em>
+            </h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2px', maxWidth: '900px', margin: '0 auto' }} className="inclusion-grid">
+            {[
+              { pct: '≥40%', label: 'Women', desc: 'At minimum 40% of all activated participants are women, embedded at every stage.' },
+              { pct: '≥40%', label: 'Refugees', desc: 'At minimum 40% of all activated participants are refugees from Kakuma and Dadaab.' },
+              { pct: '≥5%',  label: 'Persons with Disabilities', desc: 'Active inclusion of PWDs where feasible, with reasonable accommodation built in.' },
+            ].map((item, i) => (
+              <div key={i} data-reveal data-delay={String(i + 1)} style={{
+                background: i === 1 ? '#111' : '#F6F6F6',
+                padding: '56px 40px',
+                textAlign: 'center',
+              }}>
+                <div style={{
+                  fontFamily: 'var(--font-head)',
+                  fontSize: 'clamp(40px, 5vw, 64px)',
+                  fontWeight: 700,
+                  color: i === 1 ? '#fff' : '#D11F5E',
+                  letterSpacing: '-0.04em',
+                  lineHeight: 1,
+                  marginBottom: '8px',
+                }}>{item.pct}</div>
+                <div style={{
+                  fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '13px',
+                  textTransform: 'uppercase', letterSpacing: '0.1em',
+                  color: i === 1 ? '#ccc' : '#000', marginBottom: '16px',
+                }}>{item.label}</div>
+                <p style={{ fontSize: '13px', color: i === 1 ? '#777' : '#666', lineHeight: 1.7 }}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* WORK WITH US */}
-      <section style={{ background: '#fff', padding: '140px 0', borderTop: '1px solid #E8E8E8' }}>
+      <section style={{ background: '#F6F6F6', padding: '140px 0', borderTop: '1px solid #E8E8E8' }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <div data-reveal>
-            <span className="eyebrow">Work With Us</span>
+            <span className="eyebrow">Get Involved</span>
             <h2 style={{ color: '#000', maxWidth: '640px', margin: '0 auto 28px', lineHeight: 1.1 }}>
-              Ready to start your journey?
+              Ready to join or partner with<br />VUKA Youth Connect?
             </h2>
             <p style={{ maxWidth: '520px', margin: '0 auto 40px', fontSize: '16px', color: '#666' }}>
-              Whether you are a candidate seeking placement or an employer looking to hire vetted talent, we are ready to assist.
+              Whether you are a youth ready to access digital work, an employer seeking skilled talent, or an organisation wanting to collaborate — we are ready to connect.
             </p>
             <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <Link to="/jobs" className="btn btn-red">Find Placements</Link>
-              <Link to="/employers" className="btn btn-outline">Post a Role</Link>
+              <Link to="/candidates" className="btn btn-red">Join the Programme</Link>
+              <Link to="/employers" className="btn btn-outline">Partner With Us</Link>
               <Link to="/contact" className="btn btn-dark">Get In Touch</Link>
             </div>
           </div>
@@ -390,13 +423,17 @@ const Home: React.FC = () => {
       </section>
 
       <style>{`
-        .job-card:hover {
+        .service-card:hover {
           box-shadow: 0 16px 48px rgba(0,0,0,0.08);
           transform: translateY(-3px);
         }
+        @media (max-width: 1100px) {
+          .steps-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 40px !important; }
+        }
         @media (max-width: 960px) {
           .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
-          .steps-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 40px !important; }
+          .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .inclusion-grid { grid-template-columns: 1fr !important; max-width: 480px !important; }
         }
         @media (max-width: 768px) {
           .hero-section {
@@ -453,15 +490,11 @@ const Home: React.FC = () => {
             border-radius: 20px !important;
             box-shadow: 0 8px 32px rgba(0,0,0,0.03) !important;
           }
+          .services-grid { grid-template-columns: 1fr !important; }
         }
         @media (max-width: 560px) {
-          .job-card { 
-            grid-template-columns: 1fr !important; 
-            gap: 20px !important;
-            padding: 24px 20px !important;
+          .service-card { 
             border-radius: 16px !important;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.04) !important;
-            border: 1px solid #eaeaea;
           }
         }
       `}</style>
