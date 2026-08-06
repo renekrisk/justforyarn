@@ -1,10 +1,20 @@
 # Deployment Guide for Vuka Careers Portal
 
-This guide outlines how to build, configure, and upload the Vuka React web application to your cPanel hosting as a subfolder at `inkcoaching.co.ke/vuka`.
+This guide outlines how to build, configure, and upload the Vuka React web application to your cPanel hosting as a subdomain at `vuka.inkcoaching.co.ke`.
 
 ---
 
-## Step 1: Build the Project
+## Step 1: Create the Subdomain in cPanel
+
+1. Log into **https://cpanel.inkcoaching.co.ke**
+2. Go to **Domains → Subdomains**
+3. Enter `vuka` as the subdomain
+4. Set the document root to `/home/inkcoach/public_html/vuka`
+5. Click **Submit**
+
+---
+
+## Step 2: Build the Project
 
 Open your local terminal in the project root and run:
 ```bash
@@ -16,8 +26,8 @@ This compiles the TypeScript files and packages the assets into a new folder nam
 The built `dist/` folder will have this structure:
 ```
 dist/
-├── index.html          ← references /vuka/assets/... (absolute paths with base)
-├── .htaccess           ← SPA rewrite rules for /vuka/ subfolder
+├── index.html          ← references /assets/... (root paths for subdomain)
+├── .htaccess           ← SPA rewrite rules for subdomain root
 ├── assets/
 │   ├── index-*.js      ← bundled JavaScript
 │   └── index-*.css     ← bundled CSS
@@ -27,26 +37,24 @@ dist/
 └── vukalogo.png
 ```
 
-> **Note:** `vite.config.ts` is configured with `base: '/vuka/'` so all asset paths are prefixed with `/vuka/`. This ensures the site works correctly when deployed as a subfolder.
+> **Note:** `vite.config.ts` is configured with `base: '/'` so all asset paths are root-relative. This ensures the site works correctly when deployed as a subdomain.
 
 ---
 
-## Step 2: Upload to cPanel
+## Step 3: Upload to cPanel
 
-1. Log into **https://cpanel.inkcoaching.co.ke**
-2. Open **File Manager**
-3. Navigate to `/home/inkcoach/public_html/`
-4. Create a new folder named `vuka` (if it doesn't exist)
-5. Go inside the `vuka` folder
-6. Click **Upload** at the top of the screen
-7. Upload **all files and folders** from your local `dist/` directory — **preserve the `assets/` subdirectory**
-8. Make sure `.htaccess` is uploaded as a file (not a directory)
+1. In cPanel, open **File Manager**
+2. Navigate to `/home/inkcoach/public_html/vuka/` (the subdomain's document root)
+3. **Delete** any existing files in that directory
+4. Click **Upload** at the top of the screen
+5. Upload **all files and folders** from your local `dist/` directory — **preserve the `assets/` subdirectory**
+6. Make sure `.htaccess` is uploaded as a file (not a directory)
 
 ---
 
-## Step 3: Verify
+## Step 4: Verify
 
-Visit **https://inkcoaching.co.ke/vuka** — the site should load. Try refreshing a sub-route like `/vuka/courses` to confirm the SPA redirect works.
+Visit **https://vuka.inkcoaching.co.ke** — the site should load. Try refreshing a sub-route like `/courses` to confirm the SPA redirect works.
 
 ---
 

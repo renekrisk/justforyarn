@@ -7,7 +7,7 @@ FTP_USER = "inkcoach"
 FTP_PASS = "YOUR_CORRECT_PASSWORD"  # Replace this with your correct password
 
 # Target directory on the hosting server.
-# Deploying to subfolder: inkcoaching.co.ke/vuka
+# Deploying to subdomain: vuka.inkcoaching.co.ke
 REMOTE_TARGET_DIR = "/public_html/vuka"
 LOCAL_BUILD_DIR = "dist"
 
