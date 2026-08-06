@@ -5,4 +5,13 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/vuka/',
+  build: {
+    rollupOptions: {
+      output: {
+        entryFileNames: 'index-[hash].js',
+        chunkFileNames: 'index-[hash].js',
+        assetFileNames: 'index-[hash].[ext]',
+      },
+    },
+  },
 })
