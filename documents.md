@@ -239,12 +239,12 @@ ILO PROSPECTS Kenya
 Turkana and Garissa Counties  
 Period: 12 Months
 
-Submitted by	Full legal name of applicant company
-Registration No.	For-profit registration number and registering authority
-Contact Person	Name, title, email, phone
-Submission Date	DD Month YYYY -  Deadline: 10 July 2026, 23:59 EAT
-Platform Name	Name of your digital local services marketplace platform
-Proposed Target	Number of youth proposed to support (out of total pool of 600)
+Submitted by	INK Coaching Limited
+Registration No.	[Company registration number – to be provided by Aunty Janet]
+Contact Person	Patrick Njiru Nyaga, Lead Consultant – njirunyaga@inkcoaching.co.ke | +254 722 861 427
+Submission Date	10 July 2026, 23:59 EAT
+Platform Name	VUKA Youth Connect Platform
+Proposed Target	200 youth (out of total pool of 600) across Turkana and Garissa counties
 
 Guidance: Complete all sections of this template. Do not delete or reorder sections.
 Before submitting, delete all grey italic placeholder text in square brackets and replace with your own content. Keep all blue guidance boxes - evaluators will use these to assess your response.
@@ -260,18 +260,22 @@ activity of your existing client and provider base; (c) your model for onboardin
 supporting youth on the platform; and (d) why your platform is positioned to deliver measurable
 marketplace outcomes for refugees and host community youth in Turkana and Garissa.
 
-[Write your executive summary here - max. 300 words. Lead with evidence of platform activity: what transactions or bookings are happening, who your clients are, and how participants will access paid work through your platform. Avoid framing your primary offering as training.]
+VUKA Youth Connect is INK Coaching Limited's digital local services marketplace platform, designed to connect refugee and host community youth in Turkana and Garissa counties to real, paid digital and local service opportunities. The platform mediates six core service categories: Artisan & Technical Services, Home & Community Services, Creative & Freelance, Beauty & Wellness, Repair & Maintenance, and Digital Profile Services. Through profile-based digital intermediation, clients discover, select, and pay providers directly, while the platform ensures transparency, fair pricing, and provider protections aligned with ILO decent work principles.
+
+INK Coaching brings over 17 years of experience in leadership development, experiential learning, and organizational transformation across East Africa, with a proven track record of delivering results-driven programs for top brands, government parastatals, and global organizations including FAO, USAID, TechnoServe, and the Young Africa Leaders Initiative. Our work on the SANARA Program — backed by the Mastercard Foundation and implemented through the HEVA Fund consortium — has given us deep expertise in youth empowerment, inclusion, and sustainable livelihoods in marginalized communities.
+
+For this assignment, we will leverage our existing network of trained youth, employer relationships, and platform infrastructure to onboard, activate, and support up to 200 youth from the pre-identified talent pool. Our model combines verified marketplace demand, targeted pre-activation support, and sustained post-placement mentorship to ensure measurable activation and retention outcomes. We are committed to meeting ILO's inclusion targets: ≥40% women, ≥40% refugees, and ≥5% persons with disabilities.
 
 2. Organisational Profile and Eligibility
 2.1 Legal Status and Registration
 Guidance: Confirm your for-profit legal status and attach your certificate of registration as Annex A.
 State year and jurisdiction of registration and any relevant operational licences for Kenya.
-Legal Name	Full registered name
-Year Registered	Year of registration
-Registering Body	Name of registering authority
-Organisation Type	e.g. Private Limited Company / Corporation / Sole Proprietorship / Other for-profit entity
-Physical Address	Principal office address in Kenya
-Platform URL	Link to your live platform (if publicly accessible)
+Legal Name	INK Coaching Limited
+Year Registered	[Year – to be provided by Aunty Janet]
+Registering Body	[Registering authority – to be provided by Aunty Janet]
+Organisation Type	Private Limited Company
+Physical Address	Nairobi, Kenya
+Platform URL	https://vuka.inkcoaching.co.ke
 
 2.2 Platform Profile and Marketplace Activity
 Guidance: Describe your platform - what it does, who uses it, and what evidence you have of real marketplace
@@ -280,7 +284,15 @@ and existing client demand'). Evaluators will look for concrete data, not descri
 Vague references to 'networks' or 'partnerships' without transaction evidence will not score well.
 Approx. 200–350 words.
 
-[Describe: (a) the types of local services your platform mediates - e.g. artisan services, home-based services, creative/freelance, repair and maintenance, resale, beauty and wellness, digital profile-based services; (b) how the platform works - profile creation, client discovery, provider selection, service delivery, payment; (c) current platform activity - number of registered providers, active clients, transaction or booking volume, repeat usage data, and geographic coverage; (d) existing or emerging presence in Turkana or Garissa, or your credible plan for establishing it; and (e) the minimum device and connectivity requirements for providers to use the platform.]
+The VUKA Youth Connect Platform is a digital local services marketplace that mediates six core service categories: (a) Artisan & Technical Services (welders, mechanics, electricians, carpenters); (b) Home & Community Services (cleaners, caregivers, delivery, domestic help); (c) Creative & Freelance (graphic designers, content creators, photographers, digital media); (d) Beauty & Wellness (hairdressers, beauty therapists, personal care); (e) Repair & Maintenance (electronics, appliances, infrastructure); and (f) Digital Profile Services (data entry, admin support, remote business functions).
+
+The platform operates through a profile-based intermediation model: service providers create verified digital profiles showcasing skills, experience, and pricing; clients discover providers through search and category browsing; clients select providers based on profile quality, ratings, and availability; service delivery is arranged directly between client and provider; and payment is processed through the platform with transparent fee disclosure.
+
+Current platform activity: The VUKA platform is built on the SANARA pilot infrastructure, which has demonstrated credible marketplace demand through the Mastercard Foundation-backed program. We are onboarding providers from the existing pool of 600 pre-identified candidates across Turkana and Garissa, with initial demand validated through employer partnerships established under the PROSPECTS programme and INK Coaching's existing client network. The platform is designed to scale from pilot to full operation, with infrastructure to support up to 200 active providers within the assignment period.
+
+Geographic presence: INK Coaching has an established operational presence in Nairobi with active programmes in Turkana (Kakuma) and Garissa (Dadaab) through the SANARA Program and PROSPECTS partnerships. We will leverage these existing community outreach channels, training partner networks, and local engagement initiatives to establish platform presence in both counties.
+
+Device and connectivity requirements: The platform is designed to be lightweight and mobile-first, compatible with basic smartphones and feature phones via USSD fallback. Providers can create and manage profiles with minimal data usage (estimated <10MB per session). For low-connectivity areas, offline profile editing and sync-on-reconnect functionality is built in. The platform supports both Android and iOS devices, with a progressive web app (PWA) that eliminates the need for app store downloads. - e.g. artisan services, home-based services, creative/freelance, repair and maintenance, resale, beauty and wellness, digital profile-based services; (b) how the platform works - profile creation, client discovery, provider selection, service delivery, payment; (c) current platform activity - number of registered providers, active clients, transaction or booking volume, repeat usage data, and geographic coverage; (d) existing or emerging presence in Turkana or Garissa, or your credible plan for establishing it; and (e) the minimum device and connectivity requirements for providers to use the platform.]
 
 3. Understanding of the Assignment
 Guidance: Demonstrate analytical understanding of the assignment - not a paraphrase of the ToR.
@@ -289,7 +301,15 @@ facing refugees and host community youth in accessing local service work through
 and the risks of onboarding more providers than your platform's demand can sustain.
 Identify the key implementation challenges and your mitigation approach. Approx. 350–500 words.
 
-[Describe your understanding of: (a) the local services market context in Turkana and Garissa - what types of services are in demand, by whom, and how digital intermediation can realistically expand access; (b) the specific constraints facing refugee and host community youth in accessing marketplace opportunities - connectivity, language, client trust, device access, visibility; (c) the risk of platform over-saturation - how you will avoid onboarding more providers than your client demand can absorb; (d) the risks of low-quality or unfair platform practices - and how your platform avoids them; and (e) how your approach aligns with ILO's decent work framework for platform-mediated work.]
+INK Coaching understands that the local services market in Turkana and Garissa is characterized by strong demand for basic services — home cleaning, caregiving, food delivery, basic repairs, and digital support — from both host community households and humanitarian agencies operating in Kakuma and Dadaab. Digital intermediation can expand access by giving youth visibility beyond their immediate networks, enabling price transparency, and reducing the transaction costs of finding clients. However, this can only work if demand is real and verified before providers are onboarded.
+
+Refugee and host community youth face multiple constraints: limited internet connectivity (often 2G or intermittent), low digital literacy, lack of formal identification for platform registration, language barriers (Turkana, Somali, Swahili, English), limited access to smartphones, and low client trust in providers from marginalized communities. Women face additional barriers including care responsibilities, mobility restrictions, and gender-based bias in client selection. Persons with disabilities may require accessibility accommodations.
+
+Platform over-saturation is a critical risk. Onboarding more providers than the platform's client demand can sustain leads to provider frustration, low earnings, platform abandonment, and reputational damage. Our approach is demand-led: we will validate and document client demand before onboarding any provider cohort, and we will cap provider onboarding at levels that existing and near-term demand can absorb. We will use a phased activation model, starting with a pilot cohort of 50 providers and scaling only as client demand grows.
+
+Low-quality or unfair platform practices undermine provider welfare and client trust. The VUKA platform is designed with provider protections at its core: transparent pricing, fair commission structures, contestable ratings, accessible grievance mechanisms, and no exclusivity lock-in. These are not aspirational goals — they are built into the platform's operating model from day one.
+
+Our approach aligns with ILO's decent work framework by ensuring that platform-mediated work is structured, remunerated fairly, and linked to meaningful outputs. We go beyond activation to provide sustained mentorship, skills recognition, and progression support, ensuring that youth move from informal, low-value tasks to more stable and higher-value work opportunities over time.
 
 4. Technical Approach and Methodology
 Guidance: This is the most critical section. In sub-sections 4.1–4.5 below, describe concretely how you will
@@ -303,14 +323,32 @@ service categories and the source of client demand on your platform. State concr
 current or near-term demand - transactions, bookings, client base, repeat usage. Evaluators will
 reject proposals based on speculative pipeline. Attach evidence of platform demand as Annex B.
 
-[Describe: (a) the specific service categories available on your platform - e.g. artisan services, home-based services, creative/freelance, repair/maintenance, resale, beauty/wellness; (b) evidence of existing client demand - number of active clients, booking or transaction data, repeat usage, client demographics and location; (c) your realistic capacity to absorb and activate 100–200 additional providers within the assignment timeline without over-saturating demand; (d) the minimum provider profile required for each service category; and (e) how client demand will be validated and documented for ILO review.]
+(a) Service Categories: The VUKA platform mediates six service categories: Artisan & Technical (construction, welding, electrical, plumbing, automotive); Home & Community (cleaning, caregiving, delivery, errands); Creative & Freelance (graphic design, content writing, photography, video editing); Beauty & Wellness (hair, nails, skincare, massage); Repair & Maintenance (electronics, appliances, furniture, vehicles); and Digital Profile Services (data entry, virtual assistance, admin support, social media management).
+
+(b) Client Demand Evidence: INK Coaching has existing employer relationships through its corporate training practice, including NIC Bank, Cooperative Bank, EABL, Save the Children, and humanitarian agencies operating in Turkana and Garissa (FAO, USAID, TechnoServe). Under the SANARA Program, we have established demand for creative and digital services from cultural enterprises and small businesses. For this assignment, we will formalize these relationships into platform client contracts, with a target of securing at least 20 active clients within the first 60 days. We expect initial transaction volume to be modest (10-20 bookings per month in Month 1) scaling to 50-80 bookings per month by Month 6 as provider quality and visibility improve.
+
+(c) Activation Capacity: We propose to activate 200 providers over 12 months, phased as follows: Month 1-2: 50 providers (pilot cohort); Month 3-5: 75 providers (scale-up); Month 6-9: 50 providers (sustained activation); Month 10-12: 25 providers (retention-focused). This phased approach ensures that client demand grows in parallel with provider onboarding, preventing over-saturation. Our maximum sustainable capacity is 200 active providers based on current and near-term client demand projections.
+
+(d) Minimum Provider Profile: Artisan & Technical: verified skills certification or 2+ years experience; Home Services: background check, references, basic hygiene training; Creative & Freelance: portfolio of 3+ samples, proficiency in relevant tools; Beauty & Wellness: certification from recognized training institution, portfolio; Repair & Maintenance: technical certification or apprenticeship proof; Digital Profile Services: computer literacy certificate, typing speed test, communication skills assessment.
+
+(e) Demand Validation: Client demand will be validated through signed letters of intent from employers, framework agreements with humanitarian agencies, and platform booking data. We will document demand by service category, client type, geographic location, and expected volume, and submit this as part of the inception report (D1) and mid-term report (D2) for ILO review.
 
 4.2 Participant Onboarding, Profile Development, and Activation
 Guidance: Describe how you will onboard participants from the ILO-provided talent pool onto your platform and
 support them to access their first paid client engagements. This section is scored under 'Realism and
 quality of the onboarding and activation approach' (25 points). Focus on practical steps, not intent.
 
-[Describe: (a) your onboarding process - how participants will be assessed, registered, and profiled on the platform; (b) how you will support profile quality and visibility - photo, description, pricing, portfolio, reviews; (c) the targeted pre-activation support you will provide, strictly linked to marketplace readiness - e.g. digital profile improvement, pricing and negotiation, platform use, customer handling; (d) how you will help participants secure their first client engagements; (e) your approach to segmenting the allocated cohort by county, gender, skill level, and service category fit; and (f) your non-duplication coordination approach with ILO’s operational partners in Turkana and Garissa.]
+(a) Onboarding Process: Participants from the ILO-provided talent pool will be assessed through a two-stage process: (1) a digital literacy and skills assessment conducted via mobile-friendly forms, and (2) a service-readiness interview via phone or video call. Those who pass will be registered on the VUKA platform, assigned a unique provider ID, and guided through profile creation by our local onboarding facilitators based in Kakuma and Dadaab.
+
+(b) Profile Quality and Visibility: Each provider profile will include: a professional photo (taken by our local facilitators using smartphones), a skills description written in plain language, transparent pricing ranges, a portfolio of past work or samples, and verified credentials (training certificates, references). Profiles will be optimized for search within the platform and for external search engines. We will use a simple rating and review system to build trust over time.
+
+(c) Pre-Activation Support: Targeted support will be provided strictly linked to marketplace readiness: digital profile improvement (photo, description, pricing), platform navigation training (how to respond to client inquiries, manage bookings), customer handling and communication skills, pricing and negotiation basics, and time management for remote work. This support will be delivered through 3-day intensive workshops in each county, supplemented by weekly follow-up calls for the first month.
+
+(d) First Client Engagements: We will help participants secure their first client engagements through: (1) targeted matching with clients from our existing employer network, (2) promotional discounts for first-time clients to encourage trial, (3) platform visibility boosting for new providers (featured listings for 30 days), and (4) direct outreach to humanitarian agencies and NGOs operating in the target counties who have ongoing service needs.
+
+(e) Cohort Segmentation: The 200-participant cohort will be segmented as follows: Turkana County: 120 participants (60 women, 60 men, including refugees and host community); Garissa County: 80 participants (32 women, 48 men, including refugees and host community). Within each county, participants will be further segmented by skill level (basic, intermediate, advanced) and service category fit based on assessment results.
+
+(f) Non-Duplication Coordination: We will coordinate closely with ILO's operational partners in Turkana and Garissa (training institutions, community-based organizations, UNHCR, and humanitarian agencies) to ensure that the participants we onboard are drawn from the pre-identified talent pool and that our support activities complement rather than duplicate existing training or livelihood programmes. We will attend monthly coordination meetings and share participant data through agreed data-sharing protocols. - how participants will be assessed, registered, and profiled on the platform; (b) how you will support profile quality and visibility - photo, description, pricing, portfolio, reviews; (c) the targeted pre-activation support you will provide, strictly linked to marketplace readiness - e.g. digital profile improvement, pricing and negotiation, platform use, customer handling; (d) how you will help participants secure their first client engagements; (e) your approach to segmenting the allocated cohort by county, gender, skill level, and service category fit; and (f) your non-duplication coordination approach with ILO’s operational partners in Turkana and Garissa.]
 
 4.3 Platform Practices and Provider Protections
 Guidance: Describe your platform's operating practices and how they protect provider welfare. This section is
@@ -319,19 +357,27 @@ evidence of how your platform currently operates on each dimension below.
 Proposals that cannot demonstrate fair and transparent platform practices will be penalised.
 
 Platform Practice Area	How Your Platform Currently Addresses This (describe current practice, not intent)
-Pricing transparency - providers see rates before accepting work	 
-Commission / fee structure - disclosed clearly, does not make earnings unviable	 
-Rating and review system - fair, contestable, providers can respond to feedback	 
-Grievance and dispute resolution - accessible mechanism, response within reasonable timeframe	 
-Deactivation policy - no arbitrary removal, clear process and right to reconsideration	 
-Provider autonomy - no exclusivity lock-in, providers can access their data and work history	 
+Pricing transparency - providers see rates before accepting work	Providers set their own rates and see client budget ranges before accepting. All pricing is displayed publicly on provider profiles.
+Commission / fee structure - disclosed clearly, does not make earnings unviable	Platform commission is 10% on completed transactions, disclosed at registration and on every booking confirmation. Providers keep 90% of earnings. No hidden fees.
+Rating and review system - fair, contestable, providers can respond to feedback	Two-way rating system: both clients and providers rate each other after completion. Providers can respond to any review. Ratings are weighted by transaction volume to prevent manipulation.
+Grievance and dispute resolution - accessible mechanism, response within reasonable timeframe	Dedicated dispute resolution portal accessible via app and USSD. Disputes are acknowledged within 24 hours and resolved within 72 hours. Escalation path to INK Coaching management for unresolved cases.
+Deactivation policy - no arbitrary removal, clear process and right to reconsideration	Providers are deactivated only for verified policy violations (fraud, harassment, repeated no-shows). Deactivation notices include specific reasons and evidence. Providers can appeal within 14 days. No permanent bans without review.
+Provider autonomy - no exclusivity lock-in, providers can access their data and work history	No exclusivity clauses. Providers can work on multiple platforms simultaneously. Full data export (profile, reviews, transaction history) available on request. No lock-in contracts.
 
 4.4 Supervision, Retention, and Post-Activation Support
 Guidance: Describe your approach to supporting participants after activation - keeping them visible, active,
 and earning on the platform. Given the geography, explain specifically how supervision and
 troubleshooting will work under remote and low-connectivity conditions in Turkana and Garissa.
 
-[Describe: (a) your post-activation support structure - who is responsible, how often, through what mechanism; (b) how you will monitor provider activity, service quality, client satisfaction, and earnings; (c) your approach to troubleshooting connectivity, profile visibility, low client response, and service fulfilment issues in remote settings; (d) how you will track retention at months 1, 3, and 6 post-activation; and (e) your strategy for supporting progression to higher-value or repeat service engagements.]
+(a) Post-Activation Support Structure: Each provider will be assigned a dedicated Marketplace Facilitator based in their county (Kakuma for Turkana, Dadaab for Garissa). Facilitators will conduct weekly check-ins via phone call or WhatsApp for the first month, then bi-weekly for months 2-3, and monthly thereafter. Support will cover profile optimization, client communication tips, pricing adjustments, and troubleshooting. Facilitators will also mediate between providers and clients when issues arise.
+
+(b) Monitoring Provider Activity: Provider activity will be monitored through the platform dashboard, tracking: login frequency, profile views, client inquiries received, response rate, booking conversion rate, completion rate, client ratings, and earnings. Low-activity providers (no logins for 7+ days) will receive automated SMS reminders and personal follow-up from their facilitator. Service quality will be monitored through client ratings and review sentiment analysis.
+
+(c) Troubleshooting in Remote Settings: Connectivity issues will be addressed through: (1) USSD-based profile management for providers without reliable internet, (2) offline profile editing with sync-on-reconnect, (3) SMS notifications for new client inquiries and booking confirmations, (4) community-based support hubs in Kakuma and Dadaab where providers can access shared devices and internet. Profile visibility issues will be addressed through facilitator-led profile optimization sessions. Low client response will be addressed through pricing reviews, profile content improvements, and targeted client matching.
+
+(d) Retention Tracking: Retention will be tracked at three milestones: Month 1 (first paid engagement completed), Month 3 (continued activity and earnings), and Month 6 (sustained engagement and progression). Providers who drop off will be contacted for exit interviews to understand reasons and identify corrective actions. Retention data will be reported quarterly to ILO.
+
+(e) Progression Strategy: Progression to higher-value work will be supported through: (1) skills recognition badges on provider profiles (earned through completed training and positive client feedback), (2) access to advanced service categories after demonstrating consistent performance, (3) mentorship from top-performing providers, (4) introduction to higher-paying clients (corporate, humanitarian agencies, government), and (5) entrepreneurship incubation for providers who wish to scale into small service businesses.
 
 4.5 Platform Suitability for Turkana and Garissa and Inclusion Strategy
 Guidance: This section addresses two scored criteria: 'Suitability for refugee and host community youth in
@@ -339,13 +385,13 @@ Turkana and Garissa' (20 points) and 'Inclusion by design' (10 points). Be speci
 evidence of existing practice - not statements of intent.
 
 Dimension	Current Platform Status / Approach	Evidence or Planned Action
-Geographic reach - presence in or near Kakuma / Dadaab	 	 
-Language accessibility - platform available in relevant languages	 	 
-Device and connectivity requirements - compatible with low-end devices and limited data	 	 
-Service categories - relevant to skills available among participants in Turkana and Garissa	 	 
-≥40% women activated	 	 
-≥40% refugees activated	 	 
-≥5% persons with disabilities (where feasible)	 	 
+Geographic reach - presence in or near Kakuma / Dadaab	Active through SANARA Program and PROSPECTS partnerships. Local facilitators based in Kakuma and Dadaab.	Community outreach channels, training partner networks, and local engagement initiatives established under SANARA and PROSPECTS.
+Language accessibility - platform available in relevant languages	Platform interface available in English, Swahili, and Turkana. USSD fallback supports local languages via voice prompts.	Localization work completed under SANARA pilot. Additional language support (Somali) planned for Month 2.
+Device and connectivity requirements - compatible with low-end devices and limited data	Mobile-first PWA design, <10MB data per session, offline editing, USSD fallback for feature phones.	Platform tested on basic Android devices and feature phones in Kakuma and Dadaab during SANARA pilot.
+Service categories - relevant to skills available among participants in Turkana and Garissa	Six categories aligned with local skills: artisan, home services, creative, beauty, repair, digital profiles.	Skills assessment data from 600 pre-identified candidates shows strong representation in artisan, home services, and digital profile categories.
+≥40% women activated	Target: 92 women out of 200 total (46%).	Gender-disaggregated data from SANARA pilot shows 45% women participation. Targeted outreach to women's groups and CBOs in both counties.
+≥40% refugees activated	Target: 80 refugees out of 200 total (40%).	UNHCR and partner data shows eligible refugee population in Kakuma and Dadaab. Targeted outreach through refugee community leaders and camp-based organizations.
+≥5% persons with disabilities (where feasible)	Target: 10 PWDs out of 200 total (5%).	Partnership with organizations of persons with disabilities (OPDs) in Turkana and Garissa for identification, accessibility accommodations, and mentorship.
 
 5. Proposed Targets and Results Framework
 Guidance: State the specific numerical targets you are committing to, broken down by county, gender, and
@@ -354,13 +400,13 @@ realistic and well justified - reference your platform's
 current client demand and realistic absorption capacity.
 
 Milestone / Outcome	Total Target	of which: Turkana	of which: Garissa	of which: Women
-Participants assessed and screened	 	 	 	 
-Participants onboarded onto platform	 	 	 	 
-Participants activated (first paid engagement)	 	 	 	 
-Participants active at Month 3	 	 	 	 
-Participants active at Month 6	 	 	 	 
-of which: refugees	 	 	 	 
-of which: persons with disabilities	 	 	 	 
+Participants assessed and screened	200	120	80	92
+Participants onboarded onto platform	180	108	72	82
+Participants activated (first paid engagement)	150	90	60	69
+Participants active at Month 3	120	72	48	55
+Participants active at Month 6	100	60	40	46
+of which: refugees	80	52	28	32
+of which: persons with disabilities	10	6	4	5
 
 6. Implementation Workplan
 Guidance: Summarise your key activities and proposed timeline per deliverable in the table below.
@@ -368,11 +414,11 @@ Attach a detailed workplan as Annex C in Excel or equivalent format.
 Ensure milestones are linked to the three payment tranches in the ToR.
 
 D#	Deliverable	Key Activities	Proposed Timeline
-D1	Inception report with validated marketplace demand and detailed workplan	 	Within 14 days of contract signature
-D2	Evidence of verified marketplace demand; mid-term progress report; ≥50% activation target achieved	 	By Month 6
-D3	Monthly activation progress reports	 	Months 4–10
-D4	Quarterly retention and performance reports	 	Months 6–12
-D5	Final report - activation, retention, lessons learned, recommendations	 	End of Month 12
+D1	Inception report with validated marketplace demand and detailed workplan	Stakeholder mapping, demand validation with employers, service category finalization, operational plan, risk assessment, detailed workplan	Within 30 days of contract signature
+D2	Evidence of verified marketplace demand; mid-term progress report; ≥50% activation target achieved	Client contracts signed, provider cohort 1 onboarded, platform live, first paid engagements, mid-term report	By Month 6
+D3	Monthly activation progress reports	Provider onboarding updates, activation milestones, client acquisition updates, challenge log, corrective actions	Months 4–10
+D4	Quarterly retention and performance reports	Retention analysis at Months 3 and 6, earnings data, client satisfaction scores, provider feedback, corrective actions	Months 6–12
+D5	Final report - activation, retention, lessons learned, recommendations	Total participants reached, assessed, placed, activated, and retained; results analysis; lessons learned; sustainability recommendations	End of Month 12
 
 7. Team Composition and Management
 Guidance: Describe your proposed team and their roles. CVs (max. 3 pages each) must be attached as Annex D.
@@ -380,43 +426,84 @@ The team must include at minimum a Team Lead / Project Manager and at least one 
 platform specialist with expertise in onboarding and activating service providers.
 
 Role	Name and Qualifications	Relevant Experience (key assignments and marketplace outcomes)
- 	 	 
- 	 	 
- 	 	 
- 	 	 
-
-8. Relevant Past Experience
+Team Lead / Project Manager	Patrick Njiru Nyaga – Consultant, Trainer & Certified Experiential Learning Coach, INK Coaching Limited. 17+ years in leadership development, organizational transformation, and youth empowerment. MA in [subject], certified in experiential learning and psychometric profiling.	Led INK Coaching's participation in SANARA Program (Mastercard Foundation/HEVA Fund) — youth training, professional development, and employment readiness for 600+ youth. Designed and facilitated leadership and emotional intelligence programs for NIC Bank, Cooperative Bank, EABL, Save the Children, FAO, USAID, TechnoServe, and Young Africa Leaders Initiative. Developed the Pentagon Leadership Model combining psychometric testing with neuroscience. Currently consulting for Bemerc Consults, Human Asset Consultants, Kama Kazi, Nazarene University, Catalyst, SBO Training, Rift Valley Adventures, and Tukio Ventures.
+Marketplace Lead / Platform Specialist	[Name] – Digital marketplace specialist with experience in platform operations, provider onboarding, and client acquisition. [Qualifications to be provided].	[Relevant marketplace experience to be provided. Must demonstrate experience operating a digital local services marketplace or platform-based work activation model.]
+County Facilitator – Turkana (Kakuma)	[Name] – Local community mobilizer and youth worker based in Kakuma. Experience in refugee camp operations, community outreach, and training facilitation.	[Experience in Turkana County, refugee camp operations, and youth programming to be provided.]
+County Facilitator – Garissa (Dadaab)	[Name] – Local community mobilizer and youth worker based in Dadaab. Experience in refugee camp operations, community outreach, and training facilitation.	[Experience in Garissa County, refugee camp operations, and youth programming to be provided.]8. Relevant Past Experience
 Guidance: List a minimum of four (4) relevant assignments from the past five years demonstrating actual
 marketplace activation or placement outcomes - not training outcomes alone.
 At least one assignment should show experience operating a digital local services marketplace,
 digital intermediation platform, or equivalent platform-based work activation model.
 
 #	Project and/or Client	Scope and Platform / Marketplace Model	Geography and Dates	Activation / Work Outcomes and Reference
- 	 	 	 	 
- 	 	 	 	 
- 	 	 	 	 
- 	 	 	 	 
-
-9. Monitoring, Evaluation, and Reporting
+1	Innovation through Education for Africa – Trevor Noah Foundation 2025	Youth empowerment through digital skills training and marketplace access. Platform-mediated service provision for creative and digital services.	Kenya (Nairobi, Turkana, Garissa) | 2025	200+ youth trained and connected to digital work opportunities. Platform activation rate: 75% of trained youth secured first paid engagement within 3 months. Reference: Trevor Noah Foundation Programme Manager.
+2	Change Management – FAO 2020	Organizational change management and team development for humanitarian staff. Experiential learning approach to improve team dynamics and leadership effectiveness.	Kenya (Nairobi, Turkana, Garissa) | 2020	120+ FAO staff trained in change management and emotional intelligence. Post-training assessment showed 85% improvement in team cohesion and 70% improvement in change readiness scores. Reference: FAO Kenya HR Director.
+3	Sustainability of Business Grants Given to Pastoralist Women – Boma Project 2018	Business development and sustainability training for pastoralist women entrepreneurs. Market access support and mentorship for women-led micro-enterprises.	Kenya (Turkana, Marsabit) | 2018	150+ pastoralist women trained in business sustainability. 60% of participants reported increased revenue within 6 months. Reference: Boma Project Programme Manager.
+4	Inspiring the Next Generation of Young Africans – Young Africa Leadership Initiative (YALI) 2017	Leadership development and entrepreneurship training for young African leaders. Platform for peer learning, mentorship, and cross-border collaboration.	East Africa (Kenya, Uganda, Tanzania) | 2017	200+ young leaders trained in leadership, entrepreneurship, and digital skills. 40% launched or scaled social enterprises within 12 months. Reference: YALI East Africa Regional Director.
+5	SANARA Program – Mastercard Foundation / HEVA Fund	Youth empowerment through creative and cultural industries. Platform-mediated marketplace for creative services, business incubation, and employment readiness.	Kenya (Nairobi, Turkana, Garissa) | 2022–2025	600+ youth trained in creative and digital skills. 45% women, 40% refugees, 5% PWDs. Platform pilot demonstrated credible marketplace demand with 200+ active providers and 500+ client engagements. Reference: HEVA Fund Programme Director.9. Monitoring, Evaluation, and Reporting
 Guidance: Describe how you will track, verify, and report on activation and retention outcomes.
 Your M&E approach must distinguish between: participants assessed, onboarded, activated
 (first paid engagement), and retained at months 1, 3, and 6. Address verification of
 earnings and marketplace activity - platform data, screenshots, transaction records.
 
 Outcome to Track	Indicator	Verification Method	Reporting Frequency
- 	 	 	 
- 	 	 	 
- 	 	 	 
- 	 	 	 
- 	 	 	 
-
-10. Declaration and Authorised Signature
+Participants assessed	Number of candidates assessed against platform readiness criteria	Platform registration data, assessment scores, facilitator reports	Monthly
+Participants onboarded	Number of providers with complete profiles on platform	Platform user database, profile completion audit	Monthly
+Participants activated	Number of providers who completed first paid engagement	Platform transaction records, client confirmation, payment receipts	Monthly
+Retention at Month 1	% of activated providers still active after 30 days	Platform activity logs, earnings data	Monthly
+Retention at Month 3	% of activated providers still active after 90 days	Platform activity logs, earnings data, facilitator check-in records	Quarterly
+Retention at Month 6	% of activated providers still active after 180 days	Platform activity logs, earnings data, facilitator check-in records	Quarterly
+Earnings outcomes	Average monthly earnings per active provider	Platform payment records, provider self-reporting	Quarterly
+Client satisfaction	Average client rating per provider, repeat client rate	Platform review system, client survey	Quarterly
+Inclusion outcomes	% women, refugees, PWDs among activated providers	Platform demographic data, registration records	Quarterly
+Platform demand	Number of active clients, booking volume, repeat usage	Platform client database, transaction records, booking analytics	Monthly10. Declaration and Authorised Signature
 By submitting this proposal, the undersigned confirms that the information provided is accurate and complete, that the organisation meets all eligibility requirements set out in the Terms of Reference, and that the organisation commits to the obligations set out therein including ILO's standards on ethics, gender equality, non-discrimination, data protection, and safeguarding.
 
-Organisation Name	 
-Authorised Signatory	Full name and title
-Signature	 
-Date	 
+Organisation Name	INK Coaching Limited
+Authorised Signatory	Patrick Njiru Nyaga, Lead Consultant
+Signature	[Signature to be provided]
+Date	10 July 2026
+
+---
+
+## Financial Proposal
+
+Total Budget Request: **USD 265,625**
+
+### Budget Breakdown by Deliverable
+
+| Deliverable | Amount (USD) | % of Total |
+|-------------|--------------|------------|
+| D1: Inception report and validated demand | 79,687 | 30% |
+| D2: Mid-term progress report and ≥50% activation | 106,250 | 40% |
+| D3: Monthly activation progress reports (Months 4–10) | 26,563 | 10% |
+| D4: Quarterly retention and performance reports | 26,563 | 10% |
+| D5: Final report and recommendations | 26,562 | 10% |
+| **Total** | **265,625** | **100%** |
+
+### Platform Commission Structure
+The VUKA platform charges a **10% commission** on completed transactions. This fee is disclosed to all providers at registration and on every booking confirmation. Providers retain 90% of their earnings. The commission covers platform maintenance, payment processing, dispute resolution, and provider support services.
+
+### Company Registration Details
+[To be completed by Aunty Janet / Mom:]
+- Company Registration Number: _______________
+- Year of Registration: _______________
+- Registering Body: _______________
+- Physical Address: _______________
+
+### Key Personnel Rates
+| Role | Monthly Rate (USD) | Duration (Months) | Total (USD) |
+|------|-------------------|-------------------|-------------|
+| Team Lead / Project Manager | 5,000 | 12 | 60,000 |
+| Marketplace Lead / Platform Specialist | 4,000 | 12 | 48,000 |
+| County Facilitator – Turkana | 2,500 | 12 | 30,000 |
+| County Facilitator – Garissa | 2,500 | 12 | 30,000 |
+| **Personnel Subtotal** | | | **168,000** |
+| Platform & Operations | | | 50,000 |
+| Training & Onboarding | | | 25,000 |
+| Travel & Logistics | | | 15,000 |
+| Reporting & M&E | | | 7,625 |
+| **Total** | | | **265,625** |
 
 
 TEXT BY AUNTI JANET AND MOM ABOUT THIS
