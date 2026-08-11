@@ -3,23 +3,20 @@ import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const footerLinks = [
-    { heading: 'Programme', links: [
-      { label: 'Home',              path: '/' },
-      { label: 'About VUKA',        path: '/about' },
-      { label: 'For Youth',         path: '/candidates' },
-      { label: 'For Partners',      path: '/employers' },
+    { heading: 'Shop', links: [
+      { label: 'All Products', path: '/shop' },
+      { label: 'Custom Orders', path: '/shop' },
+      { label: 'New Arrivals', path: '/shop' },
     ]},
-    { heading: 'Skills & Training', links: [
-      { label: 'Digital Skills',          path: '/training' },
-      { label: 'Marketplace Readiness',   path: '/training' },
-      { label: 'Remote Work Prep',        path: '/training' },
-      { label: 'Entrepreneurship',        path: '/training' },
+    { heading: 'Company', links: [
+      { label: 'About Us', path: '/about' },
+      { label: 'Our Story', path: '/about' },
+      { label: 'Contact', path: '/contact' },
     ]},
-    { heading: 'Contact', links: [
-      { label: 'info@inkcoaching.co.ke', path: 'mailto:info@inkcoaching.co.ke' },
-      { label: 'inkcoaching.co.ke',      path: 'https://inkcoaching.co.ke' },
-      { label: '+254-714-036-800',       path: 'tel:+254714036800' },
-      { label: '+254-721-346-176',       path: 'tel:+254721346176' },
+    { heading: 'Support', links: [
+      { label: 'Contact Us', path: '/contact' },
+      { label: 'FAQ', path: '/contact' },
+      { label: 'Shipping', path: '/contact' },
     ]},
   ];
 
@@ -32,14 +29,19 @@ const Footer: React.FC = () => {
           {/* Brand */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <img
-                src="/logo.png"
-                alt="Ink Coaching"
-                style={{ height: '52px', width: 'auto', display: 'block', filter: 'brightness(0) invert(1)' }}
-              />
+              <span style={{
+                fontFamily: 'var(--font-head)',
+                fontSize: '22px',
+                fontWeight: 800,
+                letterSpacing: '0.08em',
+                color: '#FFFFFF',
+                textTransform: 'uppercase',
+              }}>
+                CROCHET<span style={{ color: '#D11F5E', marginLeft: '4px' }}>.</span>
+              </span>
             </div>
             <p style={{ color: '#9A9A9A', fontSize: '14px', lineHeight: 1.75, maxWidth: '280px' }}>
-              Empowering refugee and host community youth in Turkana and Garissa to access real, paid digital work opportunities. Powered by INK Coaching.
+              Handcrafted crochet pieces made with love and care. Each stitch tells a story of creativity and passion.
             </p>
           </div>
 
@@ -62,6 +64,7 @@ const Footer: React.FC = () => {
                   <li key={link.label}>
                     <Link
                       to={link.path}
+                      onClick={() => window.scrollTo(0, 0)}
                       style={{ fontSize: '14px', color: '#9A9A9A', transition: 'color 0.2s' }}
                       className="f-link"
                     >
@@ -86,7 +89,7 @@ const Footer: React.FC = () => {
           gap: '16px',
         }}>
           <p style={{ fontSize: '12px', color: '#555555' }}>
-            © {new Date().getFullYear()} INK Coaching Limited — VUKA Youth Connect Programme. All rights reserved.
+            © {new Date().getFullYear()} Crochet by [Artist Name]. All rights reserved.
           </p>
           <div style={{ display: 'flex', gap: '24px' }}>
             <a href="#" style={{ fontSize: '12px', color: '#555555' }} className="f-link">Privacy Policy</a>

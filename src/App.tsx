@@ -1,24 +1,29 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
-import Preloader from './components/Preloader';
+import WelcomeScreen from './components/WelcomeScreen';
 import Home from './pages/Home';
-import Jobs from './pages/Jobs';
-import ForCandidates from './pages/ForCandidates';
-import ForEmployers from './pages/ForEmployers';
-import Training from './pages/Training';
-import Contact from './pages/Contact';
+import Shop from './pages/Shop';
 import About from './pages/About';
-import Courses from './pages/Courses';
+import Contact from './pages/Contact';
+
+const ScrollToTop: React.FC = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
 
 const App: React.FC = () => {
   return (
     <Router>
       {/* Global Interactive Elements */}
       <CustomCursor />
-      <Preloader />
+      <WelcomeScreen />
+      <ScrollToTop />
       
       <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         {/* Sticky Header */}
@@ -28,13 +33,9 @@ const App: React.FC = () => {
         <main style={{ flex: 1 }}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/jobs" element={<Jobs />} />
+            <Route path="/shop" element={<Shop />} />
             <Route path="/about" element={<About />} />
-            <Route path="/candidates" element={<ForCandidates />} />
-            <Route path="/employers" element={<ForEmployers />} />
-            <Route path="/training" element={<Training />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/courses" element={<Courses />} />
           </Routes>
         </main>
 

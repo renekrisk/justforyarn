@@ -1,0 +1,337 @@
+/* ---- Story Page ------------------------------------------- */
+.story {
+  padding-top: 5rem; /* navbar clearance */
+}
+
+/* Hero */
+.story__hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding-block: 5rem 3rem;
+}
+
+.story__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-ink-muted);
+  margin-bottom: 2rem;
+  transition: color var(--duration-fast) var(--ease-out),
+              gap var(--duration-fast) var(--ease-out);
+  font-size: 0.7rem;
+}
+
+.story__back:hover {
+  color: var(--color-ink);
+  gap: 0.75rem;
+}
+
+.story__eyebrow {
+  display: block;
+  color: var(--color-red);
+  margin-bottom: 1.25rem;
+}
+
+.story__title {
+  margin-bottom: 1.5rem;
+}
+
+.story__lead {
+  max-width: 440px;
+  font-size: 1.05rem;
+}
+
+.story__hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.story__hero-svg {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+}
+
+/* Portrait section */
+.story__portrait-section {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding-block: var(--space-lg);
+}
+
+.story__portrait-inner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(3rem, 8vw, 6rem);
+  align-items: center;
+}
+
+/* Portrait image slot */
+.story__portrait-img-wrap {
+  flex-shrink: 0;
+}
+
+.story__portrait-placeholder {
+  width: 280px;
+  height: 360px;
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background: var(--color-bg);
+  overflow: hidden;
+  position: relative;
+}
+
+.story__portrait-svg {
+  width: 160px;
+  height: auto;
+  opacity: 0.6;
+}
+
+.story__portrait-label {
+  color: var(--color-ink-muted);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+}
+
+/* Quote */
+.story__quote {
+  position: relative;
+  padding-left: 2rem;
+  border-left: 2px solid var(--color-red);
+  font-style: normal;
+}
+
+.story__quote-mark {
+  font-family: var(--font-system);
+  font-size: 6rem;
+  font-weight: 200;
+  color: var(--color-red);
+  line-height: 0;
+  position: absolute;
+  top: 1.5rem;
+  left: -1.5rem;
+  opacity: 0.3;
+}
+
+.story__quote p {
+  font-family: var(--font-system);
+  font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+  color: var(--color-ink);
+  margin-bottom: 1.5rem;
+}
+
+.story__quote-credit {
+  color: var(--color-ink-muted);
+}
+
+/* Timeline */
+.story__timeline {
+  background: var(--color-bg);
+}
+
+.story__timeline-heading {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.story__timeline-track {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+/* Vertical line */
+.story__timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--color-red), var(--color-border));
+  transform: translateX(-50%);
+}
+
+/* Events */
+.story__event {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  padding-block: 3rem;
+  position: relative;
+}
+
+/* Dot on the line */
+.story__event::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 3.6rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--color-red);
+  background: var(--color-bg);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* Left event: year left, content right */
+.story__event--left .story__event-year {
+  text-align: right;
+  order: 1;
+}
+.story__event--left .story__event-content {
+  order: 2;
+}
+
+/* Right event: content left, year right */
+.story__event--right .story__event-year {
+  text-align: left;
+  order: 2;
+}
+.story__event--right .story__event-content {
+  order: 1;
+  text-align: right;
+}
+
+.story__event-year {
+  color: var(--color-red);
+  padding-top: 0.35rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+.story__event-title {
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.story__event-body {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.story__event-cta {
+  display: inline-flex;
+  font-size: 0.8rem;
+  padding: 0.65rem 1.4rem;
+}
+
+/* Values strip */
+.story__values-strip {
+  background: var(--color-ink);
+  padding-block: var(--space-lg);
+}
+
+.story__values-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.story__value {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  color: var(--color-white);
+}
+
+.story__value-icon {
+  font-size: 1.5rem;
+  color: var(--color-red);
+  margin-bottom: 0.25rem;
+}
+
+.story__value-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-white);
+  letter-spacing: -0.01em;
+}
+
+.story__value-desc {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.65rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .story__hero {
+    grid-template-columns: 1fr;
+  }
+
+  .story__hero-visual {
+    display: none;
+  }
+
+  .story__portrait-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .story__portrait-placeholder {
+    margin-inline: auto;
+  }
+
+  .story__quote {
+    text-align: left;
+  }
+
+  .story__timeline-line {
+    left: 1.5rem;
+  }
+
+  .story__event {
+    grid-template-columns: 1fr;
+    padding-left: 3.5rem;
+    gap: 0.5rem;
+  }
+
+  .story__event::before {
+    left: 1.5rem;
+    top: 3.2rem;
+  }
+
+  .story__event--left .story__event-year,
+  .story__event--right .story__event-year {
+    text-align: left;
+    order: 1;
+  }
+
+  .story__event--left .story__event-content,
+  .story__event--right .story__event-content {
+    order: 2;
+    text-align: left;
+  }
+
+  .story__values-inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .story__values-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}

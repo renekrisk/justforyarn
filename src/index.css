@@ -1,16 +1,16 @@
 /* ========================================================
-   VUKA: Design System v4
-   Premium Editorial | Ink Coaching Brand
+   Crochet Website: Design System
+   Handcrafted with Love
    ======================================================== */
 
-/* ── Google Fonts: Montserrat (headings/nav) + Lora (sub-headings) + Inter (body) */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
+/* ── Google Fonts: Outfit (modern geometric/cute headings & body) + Lora (serif accents) */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
 
 /* ── Tokens ─────────────────────────────────────────────── */
 :root {
-  /* Brand: red only on buttons */
-  --red:           #D11F5E;
-  --red-hover:     #b01850;
+  /* Brand: Soft Rose Blush (#E0567B) - cute, minimal, sophisticated */
+  --red:           #E0567B;
+  --red-hover:     #C84365;
 
   /* Strict palette: black, white, gray ONLY for text */
   --black:         #000000;
@@ -32,17 +32,17 @@
   --border-dark:   #222222;
 
   /* Fonts:
-     --font-head   = Montserrat  → uppercase bold headings, nav links
-     --font-sub    = Lora        → serif sub-headings (h3, h4)
-     --font-body   = Inter       → body text, labels, paragraphs
+     --font-head   = Outfit → clean, cute modern geometric sans
+     --font-sub    = Lora   → elegant serif accents
+     --font-body   = Outfit → body text, labels, paragraphs
   */
-  --font-head:     'Montserrat', -apple-system, 'Helvetica Neue', sans-serif;
-  --font-sub:      'Lora', Georgia, 'Times New Roman', serif;
-  --font-body:     'Inter', -apple-system, 'Helvetica Neue', sans-serif;
+  --font-head:     'Outfit', -apple-system, sans-serif;
+  --font-sub:      'Lora', Georgia, serif;
+  --font-body:     'Outfit', -apple-system, sans-serif;
 
   /* Layout */
   --max-w:         1200px;
-  --pad-x:         40px;   /* 40px outer margins as specified */
+  --pad-x:         40px;
   --ease:          all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -80,7 +80,7 @@ button { background: none; border: none; }
 
 /* ── Typography ─────────────────────────────────────────── */
 
-/* h1, h2: Montserrat — clean bold, title-case (not uppercase, easier to read) */
+/* h1, h2: Montserrat - clean bold, title-case (not uppercase, easier to read) */
 h1, h2 {
   font-family: var(--font-head);
   font-weight: 700;
@@ -89,7 +89,7 @@ h1, h2 {
   letter-spacing: -0.02em;  /* Montserrat at large sizes looks better tight */
 }
 
-/* h3, h4, h5: Lora — sentence-case serif sub-headings */
+/* h3, h4, h5: Lora - sentence-case serif sub-headings */
 h3, h4, h5 {
   font-family: var(--font-sub);
   font-weight: 600;
@@ -107,7 +107,7 @@ p {
   font-family: var(--font-body);
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.7;   /* slightly more open than 1.6 — better for Inter */
+  line-height: 1.7;   /* slightly more open than 1.6 - better for Inter */
   color: var(--text-body);
 }
 
@@ -129,7 +129,7 @@ p {
   align-items: center;
   gap: 10px;
   padding: 13px 32px;
-  font-family: var(--font-body);  /* Inter for buttons — cleaner at small sizes */
+  font-family: var(--font-body);  /* Inter for buttons - cleaner at small sizes */
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
@@ -220,6 +220,274 @@ p {
   transform: translateY(-3px);
 }
 
+/* ── Service Cards ──────────────────────────────────────── */
+.service-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 36px 32px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.service-card:hover {
+  border-color: transparent;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  transform: translateY(-6px);
+}
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* ── Step Cards ─────────────────────────────────────────── */
+.step-card {
+  position: relative;
+  padding-left: 24px;
+}
+.step-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: -24px;
+  width: 1px;
+  background: var(--border);
+}
+.step-card:last-child::before {
+  display: none;
+}
+.step-number {
+  font-family: var(--font-head);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--red);
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* ── Stats Section ──────────────────────────────────────── */
+.stats-section {
+  background: var(--gray-900);
+}
+
+/* ── Stat Cards ─────────────────────────────────────────── */
+.stat-card {
+  text-align: center;
+  padding: 48px 24px;
+  border-right: 1px solid var(--border);
+  transition: var(--ease);
+}
+.stat-card:last-child {
+  border-right: none;
+}
+.stat-card:hover {
+  background: rgba(255,255,255,0.03);
+}
+.stat-number {
+  font-family: var(--font-head);
+  font-size: clamp(48px, 5.5vw, 76px);
+  font-weight: 700;
+  color: var(--red);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+.stat-label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 14px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+  max-width: 140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Testimonial ────────────────────────────────────────── */
+.testimonial-section {
+  position: relative;
+  overflow: hidden;
+}
+.testimonial-quote-mark {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 200px;
+  font-family: var(--font-head);
+  color: rgba(255,255,255,0.03);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.testimonial-text {
+  font-family: var(--font-head);
+  font-size: clamp(22px, 3vw, 36px);
+  font-weight: 400;
+  font-style: italic;
+  color: #fff;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Inclusion Cards ────────────────────────────────────── */
+.inclusion-card {
+  padding: 56px 40px;
+  text-align: center;
+  transition: var(--ease);
+}
+.inclusion-card:hover {
+  transform: translateY(-4px);
+}
+.inclusion-card.dark {
+  background: #111;
+}
+.inclusion-card.light {
+  background: #F6F6F6;
+}
+.inclusion-pct {
+  font-family: var(--font-head);
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.inclusion-label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+/* ── Program Timeline ───────────────────────────────────── */
+.program-timeline {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding-top: 48px;
+}
+.program-timeline::before {
+  content: '';
+  position: absolute;
+  top: 68px;
+  left: 40px;
+  right: 40px;
+  height: 1px;
+  background: var(--border);
+}
+.program-step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  padding: 0 16px;
+}
+.program-step-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-head);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--red);
+  margin: 0 auto 24px;
+  position: relative;
+  z-index: 1;
+  transition: var(--ease);
+}
+.program-step:hover .program-step-number {
+  background: var(--red);
+  color: var(--white);
+  border-color: var(--red);
+}
+.program-step-title {
+  font-family: var(--font-sub);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+.program-step-body {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ── Marketplace Grid ───────────────────────────────────── */
+.marketplace-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.marketplace-item {
+  display: flex;
+  gap: 24px;
+  padding: 40px 36px;
+  background: var(--white);
+  transition: var(--ease);
+}
+.marketplace-item:hover {
+  background: #FAFAFA;
+}
+.marketplace-icon {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--ease);
+}
+.marketplace-item:hover .marketplace-icon {
+  border-color: var(--red);
+  background: rgba(209, 31, 94, 0.04);
+}
+.marketplace-content {
+  flex: 1;
+}
+.marketplace-title {
+  font-family: var(--font-sub);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: 8px;
+}
+.marketplace-desc {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
 /* ── Sections ────────────────────────────────────────────── */
 .section     { padding: 120px 0; }
 .section-sm  { padding: 72px 0; }
@@ -300,6 +568,11 @@ p {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes yarnSpin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
 @keyframes wordFadeIn {
   from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -356,7 +629,7 @@ p {
   .section { padding: 100px 0; } /* Massive spacing for mobile native feel */
   .section-sm { padding: 80px 0; }
   
-  /* Mobile typography — looser for readability */
+  /* Mobile typography - looser for readability */
   h1 { font-size: clamp(30px, 9vw, 44px); letter-spacing: -0.01em; }
   h2 { font-size: clamp(24px, 7vw, 36px); letter-spacing: -0.01em; }
   h3 { font-size: clamp(18px, 5vw, 22px); }
@@ -400,3 +673,186 @@ p {
   :root { --pad-x: 20px; }
   h1 { font-size: clamp(34px, 11vw, 42px); }
 }
+
+/* ── Minimalist Clean Navigation Styles ───────────────────────── */
+.site-header-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.header {
+  padding: 16px 0;
+  background: transparent;
+  pointer-events: auto;
+}
+
+.header.is-scrolled {
+  padding: 16px 0;
+  background: transparent;
+}
+
+.nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px 0 16px;
+}
+
+.nav-logo-img {
+  height: 64px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 4px rgba(0,0,0,0.25));
+  transition: height 0.3s ease;
+  pointer-events: auto;
+}
+
+.header.is-scrolled .nav-logo-img {
+  height: 52px;
+}
+
+.nav-row__right {
+  display: flex;
+  align-items: center;
+}
+
+/* Single clean menu button — icon only */
+.nav-close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #D11F5E;
+  color: #FFFFFF;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.nav-close-btn:hover {
+  background: #b01850;
+  transform: scale(1.08);
+}
+
+.menu-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+}
+
+.fullscreen-menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.nav-overlay-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.nav-overlay-wrapper[data-nav="closed"] {
+  display: none !important;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  pointer-events: auto;
+}
+
+.menu-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 440px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 48px;
+  pointer-events: auto;
+}
+
+.menu-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #FFFFFF;
+  box-shadow: -12px 0 40px rgba(0, 0, 0, 0.12);
+  z-index: 1;
+}
+
+.backdrop-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+}
+
+.menu-content-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.nav-link {
+  display: block;
+  font-family: var(--font-head);
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  color: #111111;
+  text-decoration: none;
+  padding: 6px 0;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-link-text {
+  color: #111111;
+  font-weight: 700;
+  opacity: 1 !important;
+}
+
+.nav-link:hover,
+.nav-link:hover .nav-link-text {
+  color: #D11F5E !important;
+  transform: translateX(6px);
+}
+

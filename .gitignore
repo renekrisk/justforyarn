@@ -26,3 +26,6 @@ dist-ssr
 # Invoices
 /invoice/
 
+# Environment variables
+.env
+

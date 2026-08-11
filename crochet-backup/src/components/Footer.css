@@ -1,0 +1,136 @@
+/* ---- Footer ----------------------------------------------- */
+.footer {
+  background: var(--color-ink);
+  color: var(--color-white);
+}
+
+/* CTA Strip */
+.footer__cta-strip {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-xl);
+}
+
+.footer__cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer__cta-headline {
+  font-family: var(--font-system);
+  color: var(--color-ink);
+}
+
+.footer__cta-headline em {
+  font-style: normal;
+  font-weight: 200;
+  color: var(--color-red);
+}
+
+.footer__cta-btn {
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  padding: 0.85rem 2rem;
+}
+
+/* Main footer */
+.footer__main {
+  padding-block: var(--space-lg) var(--space-md);
+}
+
+.footer__main-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4rem;
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Brand */
+.footer__wordmark {
+  margin-bottom: 1rem;
+}
+
+.footer__wordmark-name {
+  font-family: var(--font-system);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--color-white);
+  letter-spacing: -0.02em;
+}
+
+.footer__tagline {
+  max-width: 300px;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+/* Nav */
+.footer__nav {
+  display: flex;
+  gap: 4rem;
+}
+
+.footer__nav-heading {
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 1rem;
+  font-size: 0.62rem;
+}
+
+.footer__nav-link {
+  display: block;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.85rem;
+  font-weight: 300;
+  padding-block: 0.3rem;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.footer__nav-link:hover {
+  color: var(--color-red);
+}
+
+/* Bottom bar */
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-md);
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer__copy {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer__main-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer__nav {
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer__cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
