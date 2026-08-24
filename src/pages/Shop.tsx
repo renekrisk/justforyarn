@@ -1,137 +1,189 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-function useReveal() {
-  useEffect(() => {
-    const els = document.querySelectorAll('[data-reveal]');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('revealed');
-            observer.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
-    );
-    els.forEach(el => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
-}
+const WHATSAPP = 'https://wa.me/254757900294?text=' + encodeURIComponent("Hi! I'd like to place a custom order with Just For Yarns.");
 
-const products = [
-  { name: 'Amigurumi Dolls', desc: 'Handmade crochet dolls with intricate details and soft textures.', price: 'From KSh 1,500', color: '#ff6b9d' },
-  { name: 'Blankets & Throws', desc: 'Cozy, warm blankets perfect for any home. Custom sizes available.', price: 'From KSh 3,000', color: '#c44569' },
-  { name: 'Wearables', desc: 'Scarves, hats, and gloves crafted with premium yarn.', price: 'From KSh 800', color: '#8b2635' },
-  { name: 'Home Decor', desc: 'Decorative pieces including coasters, doilies, and wall hangings.', price: 'From KSh 500', color: '#d4a574' },
-  { name: 'Custom Orders', desc: 'Personalized pieces made to your specifications.', price: 'Contact for pricing', color: '#b8956a' },
-  { name: 'Gift Sets', desc: 'Beautifully packaged crochet gift sets for any occasion.', price: 'From KSh 2,000', color: '#9a7b5b' },
+const SHOP_HERO = '/logo&images/heroyarn.jpg';
+
+/* INSPOIMAGES for shop categories */
+const AMIGURUMI   = '/logo&images/INSPOIMAGES/peoplewearingtheminspos/Crochet cat beanie.jfif';
+const WEARABLES   = '/logo&images/INSPOIMAGES/peoplewearingtheminspos/Crochet granny square cropped sweater.jfif';
+const BLANKETS    = '/logo&images/INSPOIMAGES/download (2).jfif';
+const TOTES       = '/logo&images/INSPOIMAGES/peoplewearingtheminspos/Crochet footies_socks.jfif';
+const HOME_ACCENTS = '/logo&images/INSPOIMAGES/peoplewearingtheminspos/crochet set handmade with love.jfif';
+const GIFT_SETS   = '/logo&images/INSPOIMAGES/peoplewearingtheminspos/crochet wine red ruffle hat.jfif';
+
+const categories = [
+  {
+    num: '01',
+    name: 'Amigurumi & Plush',
+    desc: 'Sculptural plush figures stitched loop by loop — each one a singular object of gentle art.',
+    price: 'From KSh 1,500',
+    img: AMIGURUMI,
+  },
+  {
+    num: '02',
+    name: 'Wearables & Knitwear',
+    desc: 'Scarves, beanies, cardigans, and tops — tactile pieces made for the body and for the eye.',
+    price: 'From KSh 800',
+    img: WEARABLES,
+  },
+  {
+    num: '03',
+    name: 'Blankets & Throws',
+    desc: 'Heirloom-quality throws in warm, breathable cotton. Custom dimensions available.',
+    price: 'From KSh 3,000',
+    img: BLANKETS,
+  },
+  {
+    num: '04',
+    name: 'Totes & Accessories',
+    desc: 'Open-mesh market totes, coin purses, and shoulder bags — form married to function.',
+    price: 'From KSh 600',
+    img: TOTES,
+  },
+  {
+    num: '05',
+    name: 'Home Accents',
+    desc: 'Decorative coasters, wall hangings, and cushion covers that bring warmth to any interior.',
+    price: 'From KSh 500',
+    img: HOME_ACCENTS,
+  },
+  {
+    num: '06',
+    name: 'Gift Sets',
+    desc: 'Curated sets, beautifully packaged — the perfect gift for someone who appreciates the handmade.',
+    price: 'From KSh 2,000',
+    img: GIFT_SETS,
+  },
 ];
 
 const Shop: React.FC = () => {
-  useReveal();
-
   return (
-    <div style={{ background: '#fff', padding: '80px 0 120px' }}>
-      <div className="container">
-        {/* Header */}
-        <div style={{ marginBottom: '72px', textAlign: 'center' }} data-reveal>
-          <span className="eyebrow">Our Collection</span>
-          <h1 style={{ color: '#000', marginBottom: '24px', lineHeight: 1.1 }}>
-            Handcrafted<br />
-            <em style={{ fontStyle: 'italic', fontWeight: 400 }}>Crochet Pieces</em>
-          </h1>
-          <p style={{ fontSize: '17px', maxWidth: '560px', margin: '0 auto', lineHeight: 1.75, color: '#555' }}>
-            Each piece is meticulously crafted by hand using premium yarn and time-honored techniques. Browse our collection or contact us for custom orders.
-          </p>
+    <div className="pg-shop">
+
+      {/* ── 1. LV-STYLE EDITORIAL TWIN TILES ────────────────────── */}
+      <section className="lv-twin-tiles">
+        <div className="lv-tile">
+          <div className="lv-tile__media">
+            <img src={AMIGURUMI} alt="Amigurumi" />
+          </div>
+          <div className="lv-tile__copy">
+            <p className="lv-tile__label">New In</p>
+            <h2 className="lv-tile__heading">Amigurumi<br />& Plush Figures</h2>
+            <p className="lv-body-text" style={{ marginBottom: '24px' }}>
+              Sculptural plush figures stitched loop by loop — each one a singular object of gentle art. Perfect for gifts, collectors, or anyone who appreciates the handmade.
+            </p>
+            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="lv-text-link">
+              Inquire Now
+            </a>
+          </div>
         </div>
 
-        {/* Products Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px' }}>
-          {products.map((product, i) => (
-            <div key={i} data-reveal data-delay={String(i + 1)} style={{
-              background: '#fff',
-              border: '1px solid #E8E8E8',
-              borderRadius: '4px',
-              overflow: 'hidden',
-              transition: 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.boxShadow = '0 20px 60px rgba(0,0,0,0.08)';
-              e.currentTarget.style.transform = 'translateY(-6px)';
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.boxShadow = 'none';
-              e.currentTarget.style.transform = 'translateY(0)';
-            }}
-            >
-              <div style={{
-                height: '280px',
-                background: `linear-gradient(135deg, ${product.color}44, ${product.color}88)`,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                position: 'relative',
-                overflow: 'hidden'
-              }}>
-                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="0.8" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.9, filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))' }}>
-                  <path d="M12 19l7-7 3 3-7 7-3-3z"/>
-                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
-                  <path d="M2 2l7.586 7.586"/>
-                  <circle cx="11" cy="11" r="2"/>
-                </svg>
+        <div className="lv-tile">
+          <div className="lv-tile__media">
+            <img src={WEARABLES} alt="Wearables" />
+          </div>
+          <div className="lv-tile__copy">
+            <p className="lv-tile__label">Savoir-Faire</p>
+            <h2 className="lv-tile__heading">Wearables<br />& Knitwear</h2>
+            <p className="lv-body-text" style={{ marginBottom: '24px' }}>
+              Scarves, beanies, cardigans, and tops — tactile pieces made for the body and for the eye. Each garment is tailored to your exact measurements.
+            </p>
+            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="lv-text-link">
+              Inquire Now
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 2. LV-STYLE 3-TILE CATEGORY GRID ────────────────────── */}
+      <section className="lv-trio-section">
+        <div className="lv-trio-header">
+          <p className="lv-kicker">All Collections</p>
+          <h2 className="lv-heading-md">Explore the Full Range</h2>
+        </div>
+        <div className="lv-trio-grid">
+          {categories.slice(0, 3).map((cat) => (
+            <div key={cat.num} className="lv-trio-item">
+              <div className="lv-trio-item__media">
+                <img src={cat.img} alt={cat.name} />
               </div>
-              <div style={{ padding: '28px' }}>
-                <h3 style={{ fontFamily: 'var(--font-sub)', fontSize: '19px', fontWeight: 600, marginBottom: '10px', color: '#000' }}>
-                  {product.name}
-                </h3>
-                <p style={{ fontSize: '14px', color: '#666', lineHeight: 1.7, marginBottom: '20px' }}>
-                  {product.desc}
-                </p>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span style={{ fontFamily: 'var(--font-body)', fontSize: '14px', fontWeight: 600, color: '#D11F5E' }}>
-                    {product.price}
-                  </span>
-                  <Link to="/contact" className="btn btn-red btn-sm">Order</Link>
-                </div>
+              <div className="lv-trio-item__copy">
+                <h3 className="lv-trio-item__name">{cat.name}</h3>
+                <p className="lv-body-text" style={{ marginBottom: '12px' }}>{cat.desc}</p>
+                <span className="shop-price">{cat.price}</span>
+                <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="lv-text-link sm">
+                  Inquire
+                </a>
               </div>
             </div>
           ))}
         </div>
+      </section>
 
-        {/* CTA */}
-        <div style={{ marginTop: '80px', textAlign: 'center' }} data-reveal>
-          <div style={{
-            background: '#F6F6F6',
-            padding: '64px 40px',
-            borderRadius: '4px',
-            maxWidth: '700px',
-            margin: '0 auto'
-          }}>
-            <h2 style={{ fontFamily: 'var(--font-sub)', fontSize: '28px', fontWeight: 600, marginBottom: '16px', color: '#000' }}>
-              Want something custom?
-            </h2>
-            <p style={{ fontSize: '16px', color: '#666', lineHeight: 1.7, marginBottom: '32px', maxWidth: '480px', margin: '0 auto 32px' }}>
-              I love creating personalized pieces. Tell me your vision and I will bring it to life with care and precision.
-            </p>
-            <Link to="/contact" className="btn btn-dark">Get In Touch</Link>
+      {/* ── 3. LV-STYLE FEATURE PANEL — REACH OUT ─────────────────── */}
+      <section className="lv-feature-panel reverse">
+        <div className="lv-feature-panel__copy">
+          <p className="lv-kicker">Reach Out</p>
+          <h2 className="lv-heading-lg">
+            Something entirely<br /><em>your own.</em>
+          </h2>
+          <p className="lv-body-text">
+            Share a reference image, a color palette, or simply describe what you're imagining. Every bespoke piece is a collaboration — your vision, my hands.
+          </p>
+          <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="lv-cta-ghost">
+              Reach Out
+            </a>
+            <Link to="/about" className="lv-text-link">
+              About the Atelier
+            </Link>
           </div>
         </div>
-      </div>
+        <div className="lv-feature-panel__media">
+          <img src={SHOP_HERO} alt="Bespoke Commission" />
+        </div>
+      </section>
 
-      <style>{`
-        @media (max-width: 960px) {
-          div[style*="grid-template-columns: repeat(3"] {
-            grid-template-columns: repeat(2, 1fr) !important;
-          }
-        }
-        @media (max-width: 640px) {
-          div[style*="grid-template-columns: repeat(3"] {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
+      {/* ── 4. LV-STYLE 3-TILE CATEGORY GRID — SECOND ROW ───────── */}
+      <section className="lv-trio-section" style={{ borderTop: '1px solid #EBEBEB' }}>
+        <div className="lv-trio-header">
+          <p className="lv-kicker">More Collections</p>
+          <h2 className="lv-heading-md">Continue Exploring</h2>
+        </div>
+        <div className="lv-trio-grid">
+          {categories.slice(3, 6).map((cat) => (
+            <div key={cat.num} className="lv-trio-item">
+              <div className="lv-trio-item__media">
+                <img src={cat.img} alt={cat.name} />
+              </div>
+              <div className="lv-trio-item__copy">
+                <h3 className="lv-trio-item__name">{cat.name}</h3>
+                <p className="lv-body-text" style={{ marginBottom: '12px' }}>{cat.desc}</p>
+                <span className="shop-price">{cat.price}</span>
+                <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="lv-text-link sm">
+                  Inquire
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── 5. LV-STYLE CLOSING MANIFESTO ───────────────────────── */}
+      <section className="lv-manifesto">
+        <div className="lv-manifesto__inner">
+          <p className="lv-kicker light">Just For Yarns · Nairobi</p>
+          <h2 className="lv-manifesto__headline">
+            Made by hand.<br /><em>Made with love.</em>
+          </h2>
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="lv-cta-ghost light">
+            Reach Out
+          </a>
+        </div>
+      </section>
+
     </div>
   );
 };

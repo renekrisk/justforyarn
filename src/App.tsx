@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Header from './components/Header';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
-import WelcomeScreen from './components/WelcomeScreen';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Inspo from './pages/Inspo';
 
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
@@ -17,31 +17,36 @@ const ScrollToTop: React.FC = () => {
   return null;
 };
 
+const AppContent: React.FC = () => {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      {/* Sticky Header */}
+      <Header />
+      
+      {/* Router body */}
+      <main style={{ flex: 1, marginTop: '68px' }}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/inspo" element={<Inspo />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
+
+      {/* Consistent LV Footer on all pages */}
+      <Footer />
+    </div>
+  );
+};
+
 const App: React.FC = () => {
   return (
     <Router>
       {/* Global Interactive Elements */}
       <CustomCursor />
-      <WelcomeScreen />
       <ScrollToTop />
-      
-      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-        {/* Sticky Header */}
-        <Header />
-        
-        {/* Router body */}
-        <main style={{ flex: 1 }}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/shop" element={<Shop />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-
-        {/* Brand Footer */}
-        <Footer />
-      </div>
+      <AppContent />
     </Router>
   );
 };

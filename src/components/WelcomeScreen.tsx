@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import QuestionMarkIcon from './QuestionMarkIcon';
 
 const WelcomeScreen: React.FC = () => {
   const [phase, setPhase] = useState<'visible' | 'sliding' | 'done'>('visible');
@@ -56,16 +57,7 @@ const WelcomeScreen: React.FC = () => {
           transition: 'transform 0.55s ease, opacity 0.45s ease',
         }}
       >
-        <img
-          src="/jfy.png"
-          alt="Just For Yarns"
-          style={{
-            height: 'clamp(60px, 12vw, 100px)',
-            width: 'auto',
-            objectFit: 'contain',
-            display: 'block',
-          }}
-        />
+        <QuestionMarkIcon label="Brand logo — visual unavailable" size={64} />
 
         <span
           style={{
