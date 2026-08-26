@@ -1,11 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const WHATSAPP = 'https://wa.me/254757900294?text=' + encodeURIComponent("Hi! I'd like to discuss a bespoke commission with Just For Yarns.");
 
 /* ── IMAGES ─────────────────────────────────────────────────── */
 const HERO         = '/logo&images/H.jpg';
-const ME_FOR_HOME  = '/logo&images/meforhome.jpeg';
 const YARN_PALETTE = '/logo&images/colorfulyarn.jfif';
 const CRAFT_IMG    = '/logo&images/yarninasack.jfif';
 
@@ -15,220 +13,147 @@ const HOME_ACCENT = '/logo&images/INSPOIMAGES/peoplewearingtheminspos/Crochet Bu
 
 /* ── COMPONENT ──────────────────────────────────────────────── */
 const Home: React.FC = () => {
+
   return (
     <main className="home">
 
       {/* ══════════════════════════════════════════════════════════
-          1 · OPENING STATEMENT — Minimal, powerful
-         ══════════════════════════════════════════════════════════ */}
-      <section className="home-opening">
-        <div className="home-opening__inner">
-          <p className="home-opening__text">
-            "In a world obsessed with speed,<br />
-            there is a quiet rebellion in taking the slow path."
-          </p>
-          <span className="home-opening__attr">— The Atelier</span>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════════════
-          2 · HERO — Full-bleed cinematic image
+          1 · HERO — Full-bleed video-style background
          ══════════════════════════════════════════════════════════ */}
       <section className="home-hero">
         <div className="home-hero__media">
           <img src={HERO} alt="Just For Yarns — SS 2025" />
         </div>
-        <div className="home-hero__caption">
-          <span>SS 2025 · EDITORIAL</span>
+        <div className="home-hero__content">
+          <h2>Just For Yarns</h2>
+          <button className="home-hero__btn">Discover the Collection</button>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════════════════
-          3 · THE COLLECTION — 3 featured pieces
+          2 · IMAGE BREAK — Full-bleed with overlay text
          ══════════════════════════════════════════════════════════ */}
-      <section className="home-collection">
-        <div className="home-collection__header">
-          <span className="home-kicker">The Collection</span>
-          <h2 className="home-heading-lg">Featured Pieces</h2>
+      <section className="home-image-break">
+        <div className="home-image-break__media">
+          <img src={YARN_PALETTE} alt="The Craft" />
         </div>
-        <div className="home-collection__grid">
-          <div className="home-collection__item">
-            <div className="home-collection__media">
+        <div className="home-image-break__content">
+          <h2>The Art of Slow Fiber</h2>
+          <button className="home-image-break__btn">Discover the Collections</button>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════
+          3 · SERVICES — 3-column grid
+         ══════════════════════════════════════════════════════════ */}
+      <section className="home-services">
+        <div className="home-services__header">
+          <h2>Services</h2>
+        </div>
+        <div className="home-services__grid">
+          <div className="home-service-card">
+            <div className="home-service-card__media">
               <img src={AMIGURUMI} alt="Amigurumi" />
             </div>
-            <div className="home-collection__info">
-              <span className="home-collection__num">01</span>
-              <h3 className="home-collection__title">Amigurumi & Plush</h3>
-              <p className="home-body-text">
-                Sculptural plush figures stitched loop by loop — each one a singular object of gentle art.
-              </p>
-              <Link to="/shop" className="home-text-link">Discover</Link>
+            <div className="home-service-card__content">
+              <h3>Amigurumi & Plush</h3>
+              <p>Sculptural plush figures stitched loop by loop — each one a singular object of gentle art.</p>
+              <button className="home-service-card__btn">Inquire Now</button>
             </div>
           </div>
 
-          <div className="home-collection__item">
-            <div className="home-collection__media">
+          <div className="home-service-card">
+            <div className="home-service-card__media">
               <img src={WEARABLES} alt="Wearables" />
             </div>
-            <div className="home-collection__info">
-              <span className="home-collection__num">02</span>
-              <h3 className="home-collection__title">Wearables & Knitwear</h3>
-              <p className="home-body-text">
-                Scarves, beanies, cardigans, and tops — tactile pieces made for the body and for the eye.
-              </p>
-              <Link to="/shop" className="home-text-link">Explore</Link>
+            <div className="home-service-card__content">
+              <h3>Wearables & Knitwear</h3>
+              <p>Scarves, beanies, cardigans, and tops — tactile pieces made for the body and for the eye.</p>
+              <button className="home-service-card__btn">Inquire Now</button>
             </div>
           </div>
 
-          <div className="home-collection__item">
-            <div className="home-collection__media">
-              <img src={HOME_ACCENT} alt="Living Space" />
+          <div className="home-service-card">
+            <div className="home-service-card__media">
+              <img src={HOME_ACCENT} alt="Home Accents" />
             </div>
-            <div className="home-collection__info">
-              <span className="home-collection__num">03</span>
-              <h3 className="home-collection__title">Home Accents</h3>
-              <p className="home-body-text">
-                Decorative pieces that bring warmth and texture to any interior.
-              </p>
-              <Link to="/shop" className="home-text-link">Shop Accents</Link>
+            <div className="home-service-card__content">
+              <h3>Home Accents</h3>
+              <p>Decorative pieces that bring warmth and texture to any interior.</p>
+              <button className="home-service-card__btn">Inquire Now</button>
             </div>
           </div>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════════════════
-          4 · THE PROCESS — Visual timeline
-         ══════════════════════════════════════════════════════════ */}
-      <section className="home-process">
-        <div className="home-process__header">
-          <span className="home-kicker">The Process</span>
-          <h2 className="home-heading-lg">From Fiber to Form</h2>
-        </div>
-        <div className="home-process__steps">
-          <div className="home-process__step">
-            <span className="home-process__num">01</span>
-            <h3 className="home-process__title">Select</h3>
-            <p className="home-body-text">
-              Premium Kenyan cottons, plush wools, and sustainable blends — each fiber chosen for its story.
-            </p>
-          </div>
-          <div className="home-process__step">
-            <span className="home-process__num">02</span>
-            <h3 className="home-process__title">Design</h3>
-            <p className="home-body-text">
-              Every piece begins as a vision — yours, or ours. Sketches, swatches, and conversations.
-            </p>
-          </div>
-          <div className="home-process__step">
-            <span className="home-process__num">03</span>
-            <h3 className="home-process__title">Create</h3>
-            <p className="home-body-text">
-              Loop by loop, stitch by stitch. Hundreds of individual decisions, each made with care.
-            </p>
-          </div>
-          <div className="home-process__step">
-            <span className="home-process__num">04</span>
-            <h3 className="home-process__title">Deliver</h3>
-            <p className="home-body-text">
-              A one-of-a-kind piece, packaged with intention, ready to become part of your story.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════════════
-          5 · THE ARTISAN — Personal story
-         ══════════════════════════════════════════════════════════ */}
-      <section className="home-artisan">
-        <div className="home-artisan__grid">
-          <div className="home-artisan__media">
-            <img src={ME_FOR_HOME} alt="The Artisan" />
-          </div>
-          <div className="home-artisan__content">
-            <span className="home-kicker">The Artisan</span>
-            <h2 className="home-heading-lg">
-              Hands that create<br />
-              are never <em>idle.</em>
-            </h2>
-            <p className="home-body-text home-body-text--lg">
-              My grandmother used to say that the hands that create are never idle, and the heart that gives is never empty.
-              Under the mango tree in our compound, the women of our family would gather — my grandmother with her kiondo baskets,
-              my aunties threading beads and folding kangas — and I learned early that craft is memory, craft is love made visible.
-            </p>
-            <p className="home-body-text home-body-text--lg">
-              I picked up my first crochet hook when I was twelve. Today, every piece that leaves my studio carries
-              that same intention — a quiet conversation between my hands and the fibers I choose.
-            </p>
-            <Link to="/about" className="home-btn-ghost">Read My Story</Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════════════
-          6 · MATERIALS — Yarn showcase
-         ══════════════════════════════════════════════════════════ */}
-      <section className="home-materials">
-        <div className="home-materials__header">
-          <span className="home-kicker">Materials</span>
-          <h2 className="home-heading-lg">The Fiber</h2>
-        </div>
-        <div className="home-materials__grid">
-          <div className="home-materials__item">
-            <div className="home-materials__media">
-              <img src={YARN_PALETTE} alt="Yarn Palette" />
-            </div>
-            <h3 className="home-materials__title">Color</h3>
-            <p className="home-body-text">
-              Soft Kenyan cottons, plush wools, and sustainable blends — each fiber chosen for how it feels against your skin.
-            </p>
-          </div>
-          <div className="home-materials__item">
-            <div className="home-materials__media">
-              <img src={CRAFT_IMG} alt="Yarn in Sack" />
-            </div>
-            <h3 className="home-materials__title">Texture</h3>
-            <p className="home-body-text">
-              From delicate lace-weight threads to chunky, squishy roving — every texture tells a different story.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════════════
-          7 · BESPOKE — Commission CTA
+          4 · BESPOKE — Commission CTA
          ══════════════════════════════════════════════════════════ */}
       <section className="home-bespoke">
-        <div className="home-bespoke__inner">
-          <span className="home-kicker">Bespoke</span>
-          <h2 className="home-heading-xl">
-            Your Vision,<br />
-            <em>Stitched by Hand</em>
-          </h2>
-          <p className="home-body-text home-body-text--lg">
-            Share a Pinterest pin, a sketch, or a simple description. We translate your ideas
-            into a one-of-a-kind handmade piece — tailored to your exact colors, sizing, and fiber preferences.
-          </p>
-          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="home-btn-primary">
+        <div className="home-bespoke__media">
+          <img src={CRAFT_IMG} alt="Bespoke Commission" />
+        </div>
+        <div className="home-bespoke__content">
+          <h2>Bespoke Commissions</h2>
+          <p>Share a Pinterest pin, a sketch, or a simple description. We translate your ideas into a one-of-a-kind handmade piece.</p>
+          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="home-bespoke__btn">
             Start a Conversation
           </a>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════════════════
-          8 · CLOSING MANIFESTO
+          5 · LINKS — 4-column footer links
          ══════════════════════════════════════════════════════════ */}
-      <section className="home-manifesto">
-        <div className="home-manifesto__inner">
-          <p className="home-kicker light">Just For Yarns · Nairobi</p>
-          <h2 className="home-manifesto__headline">
-            Made by hand.<br />
-            <em>Made with love.</em>
-          </h2>
-          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="home-cta-ghost light">
-            Commission a Piece
-          </a>
+      <section className="home-links">
+        <hr className="home-links__hr" />
+        <div className="home-links__container">
+          <div className="home-links__column">
+            <div className="home-links__head">HELP</div>
+            <div className="home-links__cell"><a href={WHATSAPP} target="_blank" rel="noopener noreferrer">You can <span>call</span> or <span>email us</span>.</a></div>
+            <div className="home-links__cell"><a href="#">FAQ's</a></div>
+            <div className="home-links__cell"><a href="#">Product Care</a></div>
+            <div className="home-links__cell"><a href="#">Stores</a></div>
+          </div>
+          <div className="home-links__column">
+            <div className="home-links__head">SERVICES</div>
+            <div className="home-links__cell"><a href="#">Repairs</a></div>
+            <div className="home-links__cell"><a href="#">Personalization</a></div>
+            <div className="home-links__cell"><a href="#">Art of Gifting</a></div>
+            <div className="home-links__cell"><a href="#">Download our Apps</a></div>
+          </div>
+          <div className="home-links__column">
+            <div className="home-links__head">ABOUT JUST FOR YARNS</div>
+            <div className="home-links__cell"><a href="#">Fashion Shows</a></div>
+            <div className="home-links__cell"><a href="#">Art & Culture</a></div>
+            <div className="home-links__cell"><a href="#">The Atelier</a></div>
+            <div className="home-links__cell"><a href="#">Sustainability</a></div>
+            <div className="home-links__cell"><a href="#">Latest News</a></div>
+            <div className="home-links__cell"><a href="#">Careers</a></div>
+          </div>
+          <div className="home-links__column">
+            <div className="home-links__head">CONNECT</div>
+            <div className="home-links__cell"><a href="#"><span>Sign up</span> for first access to latest collections, campaigns and videos.</a></div>
+            <div className="home-links__cell"><a href="#">Follow Us</a></div>
+          </div>
         </div>
       </section>
+
+      <hr className="home-links__hr" />
+
+      {/* ══════════════════════════════════════════════════════════
+          6 · FOOTER
+         ══════════════════════════════════════════════════════════ */}
+      <footer className="home-footer">
+        <a href="#" className="home-footer__lang"><i className="fa-solid fa-globe"></i><span>ENGLISH (INTL)</span></a>
+        <ul>
+          <li><a href="#">Sitemap</a></li>
+          <li><a href="#">Legal & privacy</a></li>
+          <li><a href="#">Cookies</a></li>
+        </ul>
+      </footer>
+
+      <div className="home-footer__logo">Just For Yarns</div>
 
     </main>
   );
