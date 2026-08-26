@@ -29,3 +29,12 @@ dist-ssr
 # Environment variables
 .env
 
+# Large media files (serve from cloud/CDN instead)
+*.mp4
+*.mov
+*.webm
+*.avi
+*.mkv
+public/logo&images/video/
+logo&images/video/
+
