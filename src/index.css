@@ -547,9 +547,9 @@ p {
 /* ── Scroll Reveal System (Apple-style) ─────────────────── */
 [data-reveal] {
   opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateY(40px);
+  transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 [data-reveal].revealed {
   opacity: 1;
@@ -561,6 +561,14 @@ p {
 [data-reveal][data-delay="4"] { transition-delay: 0.4s; }
 [data-reveal][data-delay="5"] { transition-delay: 0.5s; }
 [data-reveal][data-delay="6"] { transition-delay: 0.6s; }
+[data-reveal][data-delay="7"] { transition-delay: 0.7s; }
+
+/* Hero section — no scroll reveal, has its own entrance */
+.lv-hero[data-reveal] {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
 
 /* ── Hero Animations ────────────────────────────────────── */
 @keyframes heroFadeUp {
@@ -933,123 +941,541 @@ p {
   color: #FFFFFF;
 }
 
-/* ── SECTION 1: HERO (Full-bleed viewport image) ────────── */
-.lv-hero {
+/* ── LOUIS VUITTON STYLE — HOME PAGE ──────────────────────── */
+
+/* ── SECTION 1: HERO — Full-bleed, NO text overlay ───────── */
+.lv-hero-lv {
   position: relative;
   width: 100%;
   height: calc(100vh - 68px);
-  min-height: 520px;
+  min-height: 600px;
   overflow: hidden;
   background: #111111;
 }
 
-.lv-hero__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 25%;
-  display: block;
+.lv-hero-lv__media {
+  position: absolute;
+  inset: 0;
 }
 
-/* Very subtle dark veil at bottom for text readability */
-.lv-hero__veil {
+.lv-hero-lv__media .editorial-image {
+  position: absolute;
+  inset: 0;
+}
+
+.lv-hero-lv__corner {
+  position: absolute;
+  bottom: 40px;
+  right: 48px;
+  z-index: 3;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  background: rgba(0,0,0,0.4);
+  padding: 10px 20px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+@media (max-width: 768px) {
+  .lv-hero-lv {
+    height: auto;
+    min-height: 70vh;
+  }
+
+  .lv-hero-lv__media {
+    position: relative;
+    height: 70vh;
+    min-height: 450px;
+  }
+
+  .lv-hero-lv__corner {
+    bottom: 24px;
+    right: 24px;
+    font-size: 9px;
+    padding: 8px 14px;
+    letter-spacing: 0.2em;
+  }
+}
+
+/* ── SECTION 2: BRAND STATEMENT — Clean text block ───────── */
+.lv-statement {
+  padding: 160px 48px;
+  background: #FFFFFF;
+  text-align: center;
+  border-bottom: 1px solid #EBEBEB;
+}
+
+.lv-statement__inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.lv-statement__headline {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(48px, 6vw, 80px);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  color: #111111;
+  margin-bottom: 32px;
+}
+
+.lv-statement__headline em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.lv-statement__body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: #555555;
+  max-width: 560px;
+  margin: 0 auto 48px;
+}
+
+.lv-statement__actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .lv-statement {
+    padding: 100px 24px;
+  }
+
+  .lv-statement__headline {
+    font-size: clamp(36px, 10vw, 52px);
+  }
+
+  .lv-statement__body {
+    font-size: 15px;
+  }
+}
+
+/* ── SECTION 3: THE CREATOR — 2-column editorial intro ───── */
+.lv-creator-lv {
+  padding: 0;
+  background: #FFFFFF;
+  border-bottom: 1px solid #EBEBEB;
+}
+
+.lv-creator-lv__grid {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+}
+
+.lv-creator-lv__media {
+  position: relative;
+  overflow: hidden;
+  background: #F5F5F5;
+  min-height: 600px;
+}
+
+.lv-creator-lv__media .editorial-image {
+  position: absolute;
+  inset: 0;
+}
+
+.lv-creator-lv__media .editorial-image img {
+  will-change: transform;
+  transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.lv-creator-lv:hover .lv-creator-lv__media .editorial-image img {
+  transform: scale(1.04);
+}
+
+.lv-creator-lv__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 80px;
+  background: #FFFFFF;
+}
+
+.lv-creator-lv__title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  color: #111111;
+  margin-bottom: 28px;
+}
+
+.lv-creator-lv__title em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.lv-creator-lv__divider {
+  width: 64px;
+  height: 1px;
+  background: #111111;
+  margin: 28px 0;
+  position: relative;
+}
+
+.lv-creator-lv__divider::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.lv-creator-lv:hover .lv-creator-lv__divider::after {
+  transform: scaleX(1);
+}
+
+.lv-creator-lv__body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: #555555;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1024px) {
+  .lv-creator-lv__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lv-creator-lv__media {
+    min-height: 50vh;
+    max-height: 600px;
+  }
+
+  .lv-creator-lv__content {
+    padding: 64px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .lv-creator-lv__content {
+    padding: 48px 24px;
+  }
+
+  .lv-creator-lv__title {
+    font-size: clamp(28px, 7vw, 40px);
+  }
+
+  .lv-creator-lv__divider {
+    width: 48px;
+    margin: 20px 0;
+  }
+}
+
+/* ── SECTION 4: CURATED GRID — Asymmetric 3-card layout ──── */
+.lv-curated-lv {
+  padding: 160px 48px;
+  background: #FFFFFF;
+  border-bottom: 1px solid #EBEBEB;
+}
+
+.lv-curated-lv__header {
+  max-width: 1440px;
+  margin: 0 auto 80px;
+  text-align: center;
+}
+
+.lv-curated-lv__grid {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.lv-curated-lv__card {
+  background: #FFFFFF;
+  border: 1px solid #EBEBEB;
+  overflow: hidden;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.lv-curated-lv__card:hover {
+  border-color: #111111;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.1);
+}
+
+.lv-curated-lv__card--tall {
+  transform: translateY(-60px);
+}
+
+.lv-curated-lv__card--wide {
+  transform: translateY(60px);
+}
+
+.lv-curated-lv__media {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #F5F5F5;
+}
+
+.lv-curated-lv__media .editorial-image {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.lv-curated-lv__media .editorial-image img {
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.lv-curated-lv__card:hover .lv-curated-lv__media .editorial-image img {
+  transform: scale(1.04);
+}
+
+.lv-curated-lv__num {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 2;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: #FFFFFF;
+  background: rgba(0,0,0,0.4);
+  padding: 6px 14px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.lv-curated-lv__copy {
+  padding: 40px 40px 48px;
+  border-top: 1px solid #EBEBEB;
+}
+
+.lv-curated-lv__title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: #111111;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 1024px) {
+  .lv-curated-lv {
+    padding: 100px 24px;
+  }
+
+  .lv-curated-lv__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .lv-curated-lv__card--tall,
+  .lv-curated-lv__card--wide {
+    transform: none;
+  }
+
+  .lv-curated-lv__header {
+    margin-bottom: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .lv-curated-lv {
+    padding: 80px 24px;
+  }
+
+  .lv-curated-lv__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .lv-curated-lv__copy {
+    padding: 28px 24px 36px;
+  }
+}
+
+/* ── SECTION 5: SAVOIR-FAIRE — Full-bleed craft ─────────── */
+.lv-craft-lv {
+  position: relative;
+  width: 100%;
+  height: clamp(500px, 70vh, 720px);
+  min-height: 500px;
+  overflow: hidden;
+  background: #111111;
+  border-bottom: 1px solid #EBEBEB;
+}
+
+.lv-craft-lv__media {
+  position: absolute;
+  inset: 0;
+}
+
+.lv-craft-lv__media .editorial-image {
+  position: absolute;
+  inset: 0;
+}
+
+.lv-craft-lv__media .editorial-image img {
+  opacity: 0.7;
+  will-change: transform;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.lv-craft-lv:hover .lv-craft-lv__media .editorial-image img {
+  transform: scale(1.03);
+}
+
+.lv-craft-lv__veil {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(0,0,0,0.55) 0%,
-    rgba(0,0,0,0.12) 40%,
-    transparent 70%
+    rgba(0,0,0,0.7) 0%,
+    rgba(0,0,0,0.35) 40%,
+    rgba(0,0,0,0.05) 70%,
+    transparent 100%
   );
 }
 
-.lv-hero__body {
+.lv-craft-lv__content {
   position: absolute;
-  bottom: 72px;
-  left: 72px;
-  max-width: 540px;
+  bottom: 80px;
+  left: 48px;
+  max-width: 1320px;
+  width: 100%;
+  z-index: 2;
 }
 
-.lv-hero__kicker {
-  font-family: var(--font-body);
-  font-size: 10.5px;
-  font-weight: 400;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.75);
-  display: block;
-  margin-bottom: 18px;
+.lv-craft-lv__content .lv-kicker {
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 16px;
 }
 
-.lv-hero__headline {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(52px, 7vw, 88px);
-  font-weight: 300;
-  line-height: 1.08;
-  letter-spacing: 0.02em;
+.lv-craft-lv__content .lv-heading-lg {
   color: #FFFFFF;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
-.lv-hero__headline em {
-  font-style: italic;
+.lv-craft-lv__content .lv-heading-lg em {
+  color: rgba(255,255,255,0.85);
 }
 
-/* Hero sub text */
-.lv-hero__sub {
-  font-family: var(--font-body);
-  font-size: 15px;
-  font-weight: 300;
-  line-height: 1.8;
-  color: rgba(255,255,255,0.8);
-  max-width: 480px;
-  margin-top: 8px;
+.lv-craft-lv__content .lv-body-text {
+  color: rgba(255,255,255,0.75);
+  max-width: 560px;
+  margin-bottom: 0;
 }
 
-/* Scroll indicator */
-.lv-hero__scroll {
-  position: absolute;
-  bottom: 32px;
-  right: 48px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  color: rgba(255,255,255,0.5);
-  font-family: var(--font-body);
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
+@media (max-width: 1024px) {
+  .lv-craft-lv {
+    height: clamp(450px, 60vh, 600px);
+    min-height: 450px;
+  }
 
-.lv-hero__scroll-line {
-  width: 1px;
-  height: 48px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
-  animation: scrollPulse 2s ease-in-out infinite;
-}
-
-@keyframes scrollPulse {
-  0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
-  50% { opacity: 1; transform: scaleY(1); }
+  .lv-craft-lv__content {
+    left: 24px;
+    right: 24px;
+    bottom: 56px;
+  }
 }
 
 @media (max-width: 768px) {
-  .lv-hero__body {
-    bottom: 48px;
-    left: 24px;
-    right: 24px;
+  .lv-craft-lv {
+    height: clamp(400px, 55vh, 520px);
+    min-height: 400px;
   }
-  .lv-hero__headline {
-    font-size: clamp(42px, 11vw, 64px);
+
+  .lv-craft-lv__content {
+    padding: 0 24px 48px;
   }
-  .lv-hero__sub {
-    font-size: 14px;
-    max-width: 100%;
+
+  .lv-craft-lv__content .lv-heading-lg {
+    font-size: clamp(32px, 7vw, 44px);
   }
-  .lv-hero__scroll {
-    display: none;
+}
+
+/* ── SECTION 6: BESPOKE — Commission CTA ─────────────────── */
+.lv-bespoke-lv {
+  padding: 160px 48px;
+  background: #FAFAFA;
+  text-align: center;
+  border-bottom: 1px solid #EBEBEB;
+}
+
+.lv-bespoke-lv__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.lv-bespoke-lv .lv-heading-lg {
+  margin-bottom: 24px;
+}
+
+.lv-bespoke-lv .lv-body-text {
+  max-width: 560px;
+  margin: 0 auto 40px;
+}
+
+@media (max-width: 768px) {
+  .lv-bespoke-lv {
+    padding: 100px 24px;
+  }
+}
+
+/* ── SECTION 7: CLOSING MANIFESTO ────────────────────────── */
+.lv-manifesto-lv {
+  background: #FFFFFF;
+  padding: 160px 48px;
+  text-align: center;
+}
+
+.lv-manifesto-lv__inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.lv-manifesto-lv__headline {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  color: #111111;
+  margin-bottom: 40px;
+}
+
+.lv-manifesto-lv__headline em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .lv-manifesto-lv {
+    padding: 100px 24px;
+  }
+
+  .lv-manifesto-lv__headline {
+    font-size: clamp(28px, 8vw, 44px);
   }
 }
 
@@ -1077,14 +1503,16 @@ p {
   background: #F5F5F5;
 }
 
-.lv-tile__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.lv-tile__media .editorial-image {
+  position: absolute;
+  inset: 0;
+}
+
+.lv-tile__media .editorial-image img {
   transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.lv-tile:hover .lv-tile__media img {
+.lv-tile:hover .lv-tile__media .editorial-image img {
   transform: scale(1.04);
 }
 
@@ -1149,6 +1577,261 @@ p {
     left: 16px;
     font-size: 10px;
     padding: 4px 10px;
+  }
+}
+
+/* ── SECTION 2: THE CREATOR — 2-column intro ─────────────── */
+.lv-creator {
+  padding: 120px 0;
+  background: #FFFFFF;
+  border-bottom: 1px solid #EBEBEB;
+}
+
+.lv-creator__grid {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.lv-creator__media {
+  position: relative;
+  overflow: hidden;
+  background: #F5F5F5;
+  border: 1px solid #EBEBEB;
+}
+
+.lv-creator__media .editorial-image {
+  position: absolute;
+  inset: 0;
+}
+
+.lv-creator__media .editorial-image img {
+  will-change: transform;
+  transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.lv-creator:hover .lv-creator__media .editorial-image img {
+  transform: scale(1.04);
+}
+
+.lv-creator__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.lv-creator__title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  color: #111111;
+  margin-bottom: 24px;
+}
+
+.lv-creator__title em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.lv-creator__divider {
+  width: 64px;
+  height: 1px;
+  background: #111111;
+  margin: 28px 0;
+  position: relative;
+}
+
+.lv-creator__divider::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.lv-creator:hover .lv-creator__divider::after {
+  transform: scaleX(1);
+}
+
+.lv-creator__body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: #555555;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1024px) {
+  .lv-creator__grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 0 24px;
+  }
+
+  .lv-creator__media {
+    height: 55vh;
+    min-height: 400px;
+    max-height: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .lv-creator {
+    padding: 80px 0;
+  }
+
+  .lv-creator__content {
+    padding: 0 24px;
+  }
+
+  .lv-creator__title {
+    font-size: clamp(28px, 7vw, 40px);
+  }
+
+  .lv-creator__divider {
+    width: 48px;
+    margin: 20px 0;
+  }
+}
+
+/* ── SECTION 3: CURATED GRID — Asymmetric 3-card layout ──── */
+.lv-curated {
+  padding: 120px 0;
+  background: #FFFFFF;
+  border-bottom: 1px solid #EBEBEB;
+}
+
+.lv-curated__header {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 48px;
+  margin-bottom: 64px;
+  text-align: center;
+}
+
+.lv-curated__grid {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.lv-curated-card {
+  background: #FFFFFF;
+  border: 1px solid #EBEBEB;
+  overflow: hidden;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.lv-curated-card:hover {
+  border-color: #111111;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+}
+
+.lv-curated-card--tall {
+  transform: translateY(-40px);
+}
+
+.lv-curated-card--wide {
+  transform: translateY(40px);
+}
+
+.lv-curated-card__media {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #F5F5F5;
+}
+
+.lv-curated-card__media .editorial-image {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.lv-curated-card__media .editorial-image img {
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.lv-curated-card:hover .lv-curated-card__media .editorial-image img {
+  transform: scale(1.04);
+}
+
+.lv-curated-card__num {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 2;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: #FFFFFF;
+  background: rgba(0,0,0,0.4);
+  padding: 6px 14px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.lv-curated-card__copy {
+  padding: 36px 40px 44px;
+  border-top: 1px solid #EBEBEB;
+}
+
+.lv-curated-card__title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: #111111;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 1024px) {
+  .lv-curated__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding: 0 24px;
+  }
+
+  .lv-curated-card--tall,
+  .lv-curated-card--wide {
+    transform: none;
+  }
+
+  .lv-curated__header {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .lv-curated {
+    padding: 80px 0;
+  }
+
+  .lv-curated__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .lv-curated-card__copy {
+    padding: 28px 24px 36px;
   }
 }
 
@@ -1345,11 +2028,9 @@ p {
   background: #F5F5F5;
 }
 
-.lv-feature-panel__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+.lv-feature-panel__media .editorial-image {
+  position: absolute;
+  inset: 0;
 }
 
 .lv-feature-panel__copy {
@@ -1426,14 +2107,16 @@ p {
   margin-bottom: 20px;
 }
 
-.lv-trio-item__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.lv-trio-item__media .editorial-image {
+  position: absolute;
+  inset: 0;
+}
+
+.lv-trio-item__media .editorial-image img {
   transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.lv-trio-item:hover .lv-trio-item__media img {
+.lv-trio-item:hover .lv-trio-item__media .editorial-image img {
   transform: scale(1.05);
 }
 
@@ -2781,53 +3464,72 @@ p {
   margin-top: 8px;
 }
 
-.inspo-grid {
+/* ── INSPO — Magazine-style offset masonry grid ───────────── */
+.inspo-masonry {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  gap: 32px;
+  align-items: start;
 }
 
 .inspo-card {
+  position: relative;
+  overflow: hidden;
   background: #FFFFFF;
   border: 1px solid #EBEBEB;
-  transition: all 0.3s ease;
-  overflow: hidden;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .inspo-card:hover {
   border-color: #111111;
-  box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
 }
 
 .inspo-card__media {
+  position: relative;
   width: 100%;
-  height: 320px;
   overflow: hidden;
   background: #F5F5F5;
 }
 
-.inspo-card__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+.inspo-card__media .editorial-image {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 
-.inspo-card:hover .inspo-card__media img {
+.inspo-card__media .editorial-image img {
+  will-change: transform;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.inspo-card:hover .inspo-card__media .editorial-image img {
   transform: scale(1.04);
 }
 
-.inspo-card__copy {
-  padding: 28px;
+.inspo-card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+  padding: 48px 28px 28px;
+  transform: translateY(100%);
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.inspo-card:hover .inspo-card__overlay {
+  transform: translateY(0);
 }
 
 .inspo-card__category {
   font-family: var(--font-body);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 400;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #888888;
+  color: rgba(255,255,255,0.7);
   margin-bottom: 8px;
 }
 
@@ -2836,129 +3538,813 @@ p {
   font-size: 22px;
   font-weight: 400;
   letter-spacing: 0.02em;
-  color: #111111;
-  margin-bottom: 12px;
+  color: #FFFFFF;
+  margin-bottom: 8px;
   line-height: 1.3;
 }
 
+.inspo-card__desc {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 0;
+}
+
+/* Offset utilities for masonry effect */
+.mt-80 { margin-top: 80px; }
+.mt-60 { margin-top: 60px; }
+.mt-40 { margin-top: 40px; }
+
 @media (max-width: 1024px) {
-  .inspo-grid {
+  .inspo-masonry {
     grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .mt-80, .mt-60, .mt-40 {
+    margin-top: 0;
   }
 }
 
 @media (max-width: 640px) {
-  .inspo-grid {
+  .inspo-masonry {
     grid-template-columns: 1fr;
-  }
-  .inspo-card__media {
-    height: 260px;
+    gap: 24px;
   }
 }
 
 /* ========================================================
-   HOME PAGE — REDESIGNED HERO (Desktop Split Layout)
+   HOME PAGE — EDITORIAL HERO (Full-bleed with overlay)
    ======================================================== */
 
-.lv-hero--split {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
+.lv-hero--editorial {
+  position: relative;
+  width: 100%;
   height: calc(100vh - 68px);
   min-height: 600px;
   overflow: hidden;
-  background: #FFFFFF;
+  background: #111111;
 }
 
-.lv-hero--split .lv-hero__img {
+.lv-hero--editorial .lv-hero__media {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.lv-hero--editorial .lv-hero__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 30%;
+  display: block;
+  animation: heroImageReveal 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  will-change: transform;
 }
 
-.lv-hero--split .lv-hero__veil {
-  display: none;
+@keyframes heroImageReveal {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-.lv-hero--split .lv-hero__body {
+.lv-hero--editorial .lv-hero__veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.15) 0%,
+    rgba(0,0,0,0.05) 30%,
+    rgba(0,0,0,0.35) 60%,
+    rgba(0,0,0,0.7) 100%
+  );
+  z-index: 1;
+}
+
+.lv-hero--editorial .lv-hero__content {
+  position: absolute;
+  bottom: 100px;
+  left: 80px;
+  max-width: 640px;
+  z-index: 2;
+  animation: heroFadeUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s forwards;
+  opacity: 0;
+}
+
+.lv-hero--editorial .lv-hero__kicker {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  display: block;
+  margin-bottom: 24px;
   position: relative;
+  padding-left: 40px;
+}
+
+.lv-hero--editorial .lv-hero__kicker::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 28px;
+  height: 1px;
+  background: rgba(255,255,255,0.5);
+}
+
+.lv-hero--editorial .lv-hero__title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(56px, 7.5vw, 96px);
+  font-weight: 300;
+  line-height: 1.06;
+  letter-spacing: 0.01em;
+  color: #FFFFFF;
+  margin-bottom: 32px;
+}
+
+.lv-hero--editorial .lv-hero__title em {
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(255,255,255,0.9);
+}
+
+.lv-hero--editorial .lv-hero__sub {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.8);
+  max-width: 480px;
+  margin-bottom: 40px;
+}
+
+.lv-hero--editorial .lv-hero__actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.lv-hero--editorial .lv-hero__scroll {
+  position: absolute;
+  bottom: 40px;
+  right: 48px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 0 64px;
-  max-width: none;
-  background: #FFFFFF;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255,255,255,0.5);
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  z-index: 2;
 }
 
-.lv-hero--split .lv-hero__kicker {
-  color: #888888;
+.lv-hero--editorial .lv-hero__scroll-line {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
 }
 
-.lv-hero--split .lv-hero__headline {
+/* Mobile Hero — Stacked Layout */
+@media (max-width: 1024px) {
+  .lv-hero--editorial {
+    height: auto;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lv-hero--editorial .lv-hero__media {
+    position: relative;
+    height: 60vh;
+    min-height: 400px;
+    max-height: 600px;
+  }
+
+  .lv-hero--editorial .lv-hero__content {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    padding: 56px 24px 48px;
+    max-width: none;
+    background: #FFFFFF;
+    animation: heroFadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s forwards;
+  }
+
+  .lv-hero--editorial .lv-hero__kicker {
+    color: #888888;
+    padding-left: 0;
+  }
+
+  .lv-hero--editorial .lv-hero__kicker::before {
+    display: none;
+  }
+
+  .lv-hero--editorial .lv-hero__title {
+    font-size: clamp(40px, 10vw, 56px);
+    color: #111111;
+    margin-bottom: 20px;
+  }
+
+  .lv-hero--editorial .lv-hero__title em {
+    color: #111111;
+  }
+
+  .lv-hero--editorial .lv-hero__sub {
+    font-size: 14px;
+    color: #666666;
+    max-width: 100%;
+    margin-bottom: 28px;
+  }
+
+  .lv-hero--editorial .lv-hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .lv-hero--editorial .lv-hero__scroll {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .lv-hero--editorial .lv-hero__media {
+    height: 50vh;
+    min-height: 320px;
+  }
+
+  .lv-hero--editorial .lv-hero__content {
+    padding: 40px 20px 36px;
+  }
+
+  .lv-hero--editorial .lv-hero__title {
+    font-size: clamp(36px, 11vw, 48px);
+  }
+}
+
+/* ── NEW BUTTON STYLES ──────────────────────────────────── */
+.lv-btn-primary {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-decoration: none;
+  background: #111111;
+  border: 1px solid #111111;
+  padding: 14px 32px;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.lv-btn-primary:hover {
+  background: #333333;
+  border-color: #333333;
+}
+
+.lv-btn-ghost {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
   color: #111111;
+  text-decoration: none;
+  border: 1px solid #111111;
+  padding: 14px 32px;
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
-.lv-hero--split .lv-hero__sub {
-  color: #666666;
-}
-
-.lv-hero--split .lv-cta-ghost {
-  color: #111111;
-  border-color: #111111;
-}
-
-.lv-hero--split .lv-cta-ghost:hover {
+.lv-btn-ghost:hover {
   background: #111111;
   color: #FFFFFF;
 }
 
-.lv-hero--split .lv-hero__scroll {
-  display: none;
+/* ── SECTION 3: CURATED COLLECTIONS ─────────────────────── */
+.lv-collections {
+  padding: 120px 0;
+  background: #FFFFFF;
+  border-bottom: 1px solid #EBEBEB;
+}
+
+.lv-collections__header {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 48px;
+  margin-bottom: 64px;
+  text-align: center;
+}
+
+.lv-collections__grid {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.lv-collection-card {
+  background: #FFFFFF;
+  border: 1px solid #EBEBEB;
+  overflow: hidden;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.lv-collection-card:hover {
+  border-color: #111111;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+}
+
+.lv-collection-card__media {
+  position: relative;
+  width: 100%;
+  height: clamp(320px, 40vw, 480px);
+  overflow: hidden;
+  background: #F5F5F5;
+}
+
+.lv-collection-card__media .editorial-image {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.lv-collection-card__media .editorial-image img {
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.lv-collection-card:hover .lv-collection-card__media .editorial-image img {
+  transform: scale(1.04);
+}
+
+.lv-collection-card__num {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 2;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: #FFFFFF;
+  background: rgba(0,0,0,0.4);
+  padding: 6px 14px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.lv-collection-card__copy {
+  padding: 36px 40px 44px;
+  border-top: 1px solid #EBEBEB;
+}
+
+.lv-collection-card__title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: #111111;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 900px) {
+  .lv-collections__grid {
+    grid-template-columns: 1fr;
+    padding: 0 24px;
+  }
+
+  .lv-collections__header {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .lv-collections {
+    padding: 80px 0;
+  }
+
+  .lv-collection-card__copy {
+    padding: 28px 24px 36px;
+  }
+}
+
+/* ── SECTION 4: THE ARTISAN — Owner Spotlight ────────────── */
+.lv-artisan {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  border-bottom: 1px solid #EBEBEB;
+  background: #FFFFFF;
+}
+
+.lv-artisan__media {
+  position: relative;
+  overflow: hidden;
+  background: #F5F5F5;
+}
+
+.lv-artisan__media .editorial-image {
+  position: absolute;
+  inset: 0;
+}
+
+.lv-artisan__media .editorial-image img {
+  will-change: transform;
+  transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.lv-artisan:hover .lv-artisan__media .editorial-image img {
+  transform: scale(1.04);
+}
+
+.lv-artisan__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 80px;
+  background: #FFFFFF;
+  position: relative;
+}
+
+.lv-artisan__content::before {
+  content: '';
+  position: absolute;
+  top: 80px;
+  left: 80px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #EBEBEB;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.lv-artisan__divider {
+  width: 64px;
+  height: 1px;
+  background: #111111;
+  margin: 32px 0;
+  position: relative;
+}
+
+.lv-artisan__divider::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.lv-artisan:hover .lv-artisan__divider::after {
+  transform: scaleX(1);
+}
+
+.lv-artisan__stats {
+  display: flex;
+  gap: 56px;
+  padding-top: 32px;
+  border-top: 1px solid #EBEBEB;
+  margin: 36px 0;
+}
+
+.lv-artisan-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lv-artisan-stat__num {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 42px;
+  font-weight: 300;
+  color: #111111;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.lv-artisan-stat__label {
+  font-family: var(--font-body);
+  font-size: 10.5px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #888888;
+}
+
+.lv-artisan__quote {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+  color: #666666;
+  line-height: 1.6;
+  margin-top: 24px;
+  padding-left: 24px;
+  border-left: 2px solid #EBEBEB;
 }
 
 @media (max-width: 1024px) {
-  .lv-hero--split {
+  .lv-artisan {
     grid-template-columns: 1fr;
-    grid-template-rows: 50vh auto;
-    height: auto;
     min-height: auto;
   }
 
-  .lv-hero--split .lv-hero__img {
-    height: 50vh;
+  .lv-artisan__media {
+    height: 55vh;
+    min-height: 400px;
+    max-height: 600px;
+  }
+
+  .lv-artisan__content {
+    padding: 64px 40px;
+  }
+
+  .lv-artisan__content::before {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .lv-artisan__content {
+    padding: 48px 24px;
+  }
+
+  .lv-artisan__stats {
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .lv-artisan-stat__num {
+    font-size: 32px;
+  }
+
+  .lv-artisan__divider {
+    width: 48px;
+    margin: 24px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .lv-artisan__media {
+    height: 45vh;
+    min-height: 300px;
+  }
+
+  .lv-artisan__content {
+    padding: 40px 20px;
+  }
+
+  .lv-artisan-stat__num {
+    font-size: 28px;
+  }
+}
+
+/* ── SECTION 5: SAVOIR-FAIRE — Full-bleed craft ─────────── */
+.lv-craft {
+  position: relative;
+  width: 100%;
+  height: clamp(500px, 70vh, 720px);
+  min-height: 500px;
+  overflow: hidden;
+  background: #111111;
+  border-bottom: 1px solid #EBEBEB;
+}
+
+.lv-craft__media {
+  position: absolute;
+  inset: 0;
+}
+
+.lv-craft__media .editorial-image {
+  position: absolute;
+  inset: 0;
+}
+
+.lv-craft__media .editorial-image img {
+  opacity: 0.7;
+  will-change: transform;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.lv-craft:hover .lv-craft__media .editorial-image img {
+  transform: scale(1.03);
+}
+
+.lv-craft__veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.7) 0%,
+    rgba(0,0,0,0.35) 40%,
+    rgba(0,0,0,0.05) 70%,
+    transparent 100%
+  );
+}
+
+.lv-craft__content {
+  position: absolute;
+  bottom: 80px;
+  left: 72px;
+  max-width: 1320px;
+  width: 100%;
+  z-index: 2;
+}
+
+.lv-craft__content .lv-kicker {
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 16px;
+}
+
+.lv-craft__content .lv-heading-lg {
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.lv-craft__content .lv-heading-lg em {
+  color: rgba(255,255,255,0.85);
+}
+
+.lv-craft__content .lv-body-text {
+  color: rgba(255,255,255,0.75);
+  max-width: 560px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+  .lv-craft {
+    height: clamp(450px, 60vh, 600px);
+    min-height: 450px;
+  }
+
+  .lv-craft__content {
+    left: 24px;
+    right: 24px;
+    bottom: 56px;
+  }
+}
+
+@media (max-width: 768px) {
+  .lv-craft {
+    height: clamp(400px, 55vh, 520px);
     min-height: 400px;
   }
 
-  .lv-hero--split .lv-hero__body {
-    position: relative;
-    padding: 48px 24px;
-    background: #FFFFFF;
+  .lv-craft__content {
+    padding: 0 24px 48px;
   }
 
-  .lv-hero--split .lv-hero__veil {
-    display: none;
+  .lv-craft__content .lv-heading-lg {
+    font-size: clamp(32px, 7vw, 44px);
+  }
+}
+
+/* ── SECTION 6: GIFT SETS — Editorial Feature ────────────── */
+.lv-gift {
+  padding: 120px 0;
+  background: #FFFFFF;
+  border-bottom: 1px solid #EBEBEB;
+}
+
+.lv-gift__grid {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.lv-gift__media {
+  height: 520px;
+  overflow: hidden;
+  background: #F5F5F5;
+  border: 1px solid #EBEBEB;
+}
+
+.lv-gift__media .editorial-image {
+  position: absolute;
+  inset: 0;
+}
+
+.lv-gift__media .editorial-image img {
+  will-change: transform;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.lv-gift:hover .lv-gift__media .editorial-image img {
+  transform: scale(1.03);
+}
+
+.lv-gift__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+@media (max-width: 1024px) {
+  .lv-gift__grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
   }
 
-  .lv-hero--split .lv-hero__kicker {
-    color: #888888;
+  .lv-gift__media {
+    height: 360px;
+  }
+}
+
+@media (max-width: 768px) {
+  .lv-gift {
+    padding: 80px 0;
   }
 
-  .lv-hero--split .lv-hero__headline {
-    color: #111111;
+  .lv-gift__grid {
+    padding: 0 24px;
   }
+}
 
-  .lv-hero--split .lv-hero__sub {
-    color: #666666;
+/* ── SECTION 7: BESPOKE — Commission CTA ─────────────────── */
+.lv-bespoke {
+  padding: 140px 48px;
+  background: #FAFAFA;
+  text-align: center;
+  border-bottom: 1px solid #EBEBEB;
+}
+
+.lv-bespoke__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.lv-bespoke .lv-heading-lg {
+  margin-bottom: 24px;
+}
+
+.lv-bespoke .lv-body-text {
+  max-width: 560px;
+  margin: 0 auto 40px;
+}
+
+@media (max-width: 768px) {
+  .lv-bespoke {
+    padding: 96px 24px;
   }
+}
 
-  .lv-hero--split .lv-cta-ghost {
-    color: #111111;
-    border-color: #111111;
-  }
+/* ── SECTION 8: CLOSING MANIFESTO ────────────────────────── */
+.lv-manifesto {
+  background: #FFFFFF;
+  padding: 140px 48px;
+  text-align: center;
+  border-top: 1px solid #EBEBEB;
+  border-bottom: 1px solid #EBEBEB;
+}
 
-  .lv-hero--split .lv-cta-ghost:hover {
-    background: #111111;
-    color: #FFFFFF;
+.lv-manifesto__inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.lv-manifesto__headline {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(44px, 6vw, 76px);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  color: #111111;
+  margin-bottom: 48px;
+}
+
+.lv-manifesto__headline em {
+  font-style: italic;
+  color: #111111;
+}
+
+@media (max-width: 768px) {
+  .lv-manifesto {
+    padding: 96px 24px;
   }
 }
 
@@ -2984,11 +4370,9 @@ p {
   background: #F5F5F5;
 }
 
-.about-hero--editorial .about-hero__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 20%;
+.about-hero--editorial .about-hero__media .editorial-image {
+  position: absolute;
+  inset: 0;
 }
 
 .about-hero--editorial .about-hero__content {
@@ -3704,6 +5088,253 @@ p {
   }
 }
 
+/* ========================================================
+   PREMIUM MOTION EFFECTS — Ralph Lauren / Apple / LV Style
+   ======================================================== */
 
+/* Parallax hero image on scroll */
+.lv-hero--editorial .lv-hero__img {
+  will-change: transform;
+}
 
+/* Smooth image reveal on load */
+@keyframes imageReveal {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.lv-collection-card__media img,
+.lv-artisan__media img,
+.lv-gift__media img,
+.lv-craft__media img {
+  animation: imageReveal 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Staggered card entrance */
+.lv-collection-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              border-color 0.4s ease,
+              box-shadow 0.4s ease;
+}
+
+.lv-collection-card.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lv-collection-card:nth-child(1) { transition-delay: 0.05s; }
+.lv-collection-card:nth-child(2) { transition-delay: 0.15s; }
+.lv-collection-card:nth-child(3) { transition-delay: 0.25s; }
+.lv-collection-card:nth-child(4) { transition-delay: 0.35s; }
+
+/* Artisan section image parallax on hover */
+.lv-artisan__media {
+  overflow: hidden;
+}
+
+.lv-artisan__media img {
+  will-change: transform;
+  transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.lv-artisan:hover .lv-artisan__media img {
+  transform: scale(1.04);
+}
+
+/* Craft section subtle zoom */
+.lv-craft__media img {
+  will-change: transform;
+  transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              opacity 0.6s ease;
+}
+
+.lv-craft:hover .lv-craft__media img {
+  transform: scale(1.04);
+  opacity: 0.8;
+}
+
+/* Gift section media hover */
+.lv-gift__media {
+  overflow: hidden;
+}
+
+.lv-gift__media img {
+  will-change: transform;
+}
+
+.lv-gift:hover .lv-gift__media img {
+  transform: scale(1.03);
+}
+
+/* Button hover effects */
+.lv-btn-primary,
+.lv-btn-ghost {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.lv-btn-primary::after,
+.lv-btn-ghost::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.1);
+  transform: translateX(-100%);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.lv-btn-primary:hover::after,
+.lv-btn-ghost:hover::after {
+  transform: translateX(0);
+}
+
+/* Text link underline animation */
+.lv-text-link {
+  position: relative;
+}
+
+.lv-text-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.lv-text-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Philosophy strip subtle animation */
+.lv-philosophy-text {
+  animation: subtleFadeIn 1.5s ease forwards;
+}
+
+@keyframes subtleFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll line pulse enhancement */
+@keyframes scrollPulse {
+  0%, 100% { 
+    opacity: 0.3; 
+    transform: scaleY(0.6); 
+  }
+  50% { 
+    opacity: 1; 
+    transform: scaleY(1); 
+  }
+}
+
+/* Smooth section transitions */
+.lv-home > section {
+  position: relative;
+}
+
+/* Image loading placeholder */
+.lv-collection-card__media,
+.lv-artisan__media,
+.lv-gift__media,
+.lv-craft__media {
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+}
+
+/* Responsive motion adjustments */
+@media (max-width: 768px) {
+  .lv-collection-card {
+    transform: translateY(20px);
+  }
+  
+  .lv-artisan__content {
+    padding: 48px 24px;
+  }
+  
+  .lv-craft__content {
+    left: 24px;
+    right: 24px;
+    bottom: 48px;
+  }
+}
+
+/* Print styles - disable animations */
+@media print {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+   .lv-hero__img,
+   .lv-collection-card__media img,
+   .lv-artisan__media img,
+   .lv-gift__media img,
+   .lv-craft__media img {
+     animation: none !important;
+   }
+ }
+
+/* ========================================================
+   EDITORIAL IMAGE COMPONENT
+   ======================================================== */
+
+.editorial-image {
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+}
+
+.editorial-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              opacity 0.5s ease;
+}
+
+/* Aspect ratio utilities */
+.editorial-image--16-9  { aspect-ratio: 16 / 9; }
+.editorial-image--4-5   { aspect-ratio: 4 / 5; }
+.editorial-image--1-1   { aspect-ratio: 1 / 1; }
+.editorial-image--3-4   { aspect-ratio: 3 / 4; }
+.editorial-image--3-2   { aspect-ratio: 3 / 2; }
+.editorial-image--2-3   { aspect-ratio: 2 / 3; }
+.editorial-image--21-9  { aspect-ratio: 21 / 9; }
+.editorial-image--auto  { aspect-ratio: auto; }
+
+/* Hover zoom variant */
+.editorial-image--hover-zoom:hover img {
+  transform: scale(1.04);
+}
+
+/* Loading shimmer */
+.editorial-image--loading::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import EditorialImage from '../components/EditorialImage';
 
 const WHATSAPP = 'https://wa.me/254757900294?text=' + encodeURIComponent("Hi! I loved reading your story on Just For Yarns and I'd like to request a custom crochet order.");
 
@@ -64,7 +65,13 @@ const About: React.FC = () => {
       {/* ── 1. EDITORIAL HERO — Image side, text side ─────────── */}
       <section className="about-hero--editorial">
         <div className="about-hero__media">
-          <img src={PORTRAIT} alt="The Artisan" />
+          <EditorialImage
+            src={PORTRAIT}
+            alt="The Artisan"
+            aspectRatio="3/4"
+            fit="cover"
+            focalPoint={{ x: 50, y: 20 }}
+          />
         </div>
         <div className="about-hero__content">
           <h1 className="lv-hero__headline">
@@ -135,7 +142,13 @@ const About: React.FC = () => {
         {portfolio.slice(0, 2).map((item, i) => (
           <div key={i} className="lv-tile">
             <div className="lv-tile__media">
-              <img src={item.img} alt={item.title} />
+              <EditorialImage
+                src={item.img}
+                alt={item.title}
+                aspectRatio="4/5"
+                fit="cover"
+                focalPoint={{ x: 50, y: 30 }}
+              />
             </div>
             <div className="lv-tile__copy">
               <p className="lv-tile__label">{item.category}</p>
@@ -169,7 +182,13 @@ const About: React.FC = () => {
           </div>
         </div>
         <div className="lv-feature-panel__media">
-          <img src={YARN_DETAIL} alt="Bespoke Commission" />
+          <EditorialImage
+            src={YARN_DETAIL}
+            alt="Bespoke Commission"
+            aspectRatio="3/4"
+            fit="cover"
+            focalPoint={{ x: 50, y: 30 }}
+          />
         </div>
       </section>
 

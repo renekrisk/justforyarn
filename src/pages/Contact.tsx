@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import EditorialImage from '../components/EditorialImage';
 
 const WHATSAPP = 'https://wa.me/254757900294?text=' + encodeURIComponent("Hi! I'd like to initiate a bespoke commission with Just For Yarns.");
 
@@ -26,7 +27,13 @@ const Contact: React.FC = () => {
       {/* ── 1. LV-STYLE FEATURE PANEL — WHATSAPP CTA ────────────── */}
       <section className="lv-feature-panel">
         <div className="lv-feature-panel__media">
-          <img src={STUDIO_IMG} alt="The Studio" />
+          <EditorialImage
+            src={STUDIO_IMG}
+            alt="The Studio"
+            aspectRatio="3/4"
+            fit="cover"
+            focalPoint={{ x: 50, y: 30 }}
+          />
         </div>
         <div className="lv-feature-panel__copy">
           <p className="lv-kicker">Fastest Response</p>

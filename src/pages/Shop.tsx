@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import EditorialImage from '../components/EditorialImage';
 
 const WHATSAPP = 'https://wa.me/254757900294?text=' + encodeURIComponent("Hi! I'd like to place a custom order with Just For Yarns.");
 
@@ -66,7 +67,13 @@ const Shop: React.FC = () => {
       <section className="lv-twin-tiles">
         <div className="lv-tile">
           <div className="lv-tile__media">
-            <img src={AMIGURUMI} alt="Amigurumi" />
+            <EditorialImage
+              src={AMIGURUMI}
+              alt="Amigurumi"
+              aspectRatio="4/5"
+              fit="cover"
+              focalPoint={{ x: 50, y: 30 }}
+            />
           </div>
           <div className="lv-tile__copy">
             <p className="lv-tile__label">New In</p>
@@ -82,7 +89,13 @@ const Shop: React.FC = () => {
 
         <div className="lv-tile">
           <div className="lv-tile__media">
-            <img src={WEARABLES} alt="Wearables" />
+            <EditorialImage
+              src={WEARABLES}
+              alt="Wearables"
+              aspectRatio="4/5"
+              fit="cover"
+              focalPoint={{ x: 50, y: 30 }}
+            />
           </div>
           <div className="lv-tile__copy">
             <p className="lv-tile__label">Savoir-Faire</p>
@@ -107,7 +120,13 @@ const Shop: React.FC = () => {
           {categories.slice(0, 3).map((cat) => (
             <div key={cat.num} className="lv-trio-item">
               <div className="lv-trio-item__media">
-                <img src={cat.img} alt={cat.name} />
+                <EditorialImage
+                  src={cat.img}
+                  alt={cat.name}
+                  aspectRatio="3/4"
+                  fit="cover"
+                  focalPoint={{ x: 50, y: 30 }}
+                />
               </div>
               <div className="lv-trio-item__copy">
                 <h3 className="lv-trio-item__name">{cat.name}</h3>
@@ -142,7 +161,13 @@ const Shop: React.FC = () => {
           </div>
         </div>
         <div className="lv-feature-panel__media">
-          <img src={SHOP_HERO} alt="Bespoke Commission" />
+          <EditorialImage
+            src={SHOP_HERO}
+            alt="Bespoke Commission"
+            aspectRatio="3/4"
+            fit="cover"
+            focalPoint={{ x: 50, y: 30 }}
+          />
         </div>
       </section>
 
@@ -156,7 +181,13 @@ const Shop: React.FC = () => {
           {categories.slice(3, 6).map((cat) => (
             <div key={cat.num} className="lv-trio-item">
               <div className="lv-trio-item__media">
-                <img src={cat.img} alt={cat.name} />
+                <EditorialImage
+                  src={cat.img}
+                  alt={cat.name}
+                  aspectRatio="3/4"
+                  fit="cover"
+                  focalPoint={{ x: 50, y: 30 }}
+                />
               </div>
               <div className="lv-trio-item__copy">
                 <h3 className="lv-trio-item__name">{cat.name}</h3>

@@ -1,0 +1,721 @@
+/* ============================================================
+   JUST FOR YARNS — HOMEPAGE
+   Creative redesign: Opening → Hero → Collection → Process → Artisan → Materials → Bespoke → Manifesto
+   ============================================================ */
+
+/* ── Base ───────────────────────────────────────────────────── */
+.home {
+  background: #ffffff;
+  color: #111111;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ── Typography ─────────────────────────────────────────────── */
+.home-heading-xl {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(48px, 6.5vw, 110px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: #111111;
+  margin: 0;
+}
+
+.home-heading-xl em {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.home-heading-lg {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(36px, 4vw, 64px);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: #111111;
+  margin: 0;
+}
+
+.home-heading-lg em {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.home-body-text {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #555555;
+  margin: 0;
+}
+
+.home-body-text--lg {
+  font-size: 17px;
+  line-height: 1.9;
+  max-width: 520px;
+}
+
+.home-kicker {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #111111;
+  margin-bottom: 24px;
+}
+
+.home-kicker.light {
+  color: #ffffff;
+}
+
+/* ── Buttons ────────────────────────────────────────────────── */
+.home-btn-primary {
+  display: inline-block;
+  padding: 16px 48px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: #111111;
+  border: 1px solid #111111;
+  text-decoration: none;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.home-btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  transition: left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 0;
+}
+
+.home-btn-primary:hover::before {
+  left: 0;
+}
+
+.home-btn-primary:hover {
+  color: #111111;
+}
+
+.home-btn-primary span,
+.home-btn-primary {
+  position: relative;
+  z-index: 1;
+}
+
+.home-btn-ghost {
+  display: inline-block;
+  padding: 14px 0;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #111111;
+  text-decoration: none;
+  border-bottom: 1px solid #111111;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  margin-right: 32px;
+}
+
+.home-btn-ghost:hover {
+  padding-bottom: 18px;
+  border-bottom-width: 2px;
+}
+
+.home-text-link {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #666666;
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.home-text-link:hover {
+  color: #111111;
+  border-bottom-color: #111111;
+}
+
+.home-cta-ghost {
+  display: inline-block;
+  padding: 16px 0;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.home-cta-ghost:hover {
+  border-bottom-color: #ffffff;
+  padding-bottom: 20px;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   1 · OPENING STATEMENT — Minimal, powerful
+   ══════════════════════════════════════════════════════════════ */
+.home-opening {
+  padding: 120px 64px;
+  text-align: center;
+  background: #ffffff;
+  border-bottom: 1px solid #EBEBEB;
+}
+
+.home-opening__inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.home-opening__text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(24px, 3vw, 40px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.4;
+  color: #111111;
+  margin: 0 0 24px;
+}
+
+.home-opening__attr {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #888888;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   2 · HERO — Full-bleed cinematic image
+   ══════════════════════════════════════════════════════════════ */
+.home-hero {
+  position: relative;
+  width: 100%;
+  background: #f4f4f4;
+}
+
+.home-hero__media {
+  width: 100%;
+  height: 90vh;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.home-hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.home-hero:hover .home-hero__media img {
+  transform: scale(1.03);
+}
+
+.home-hero__caption {
+  position: absolute;
+  bottom: 32px;
+  left: 64px;
+  z-index: 2;
+}
+
+.home-hero__caption span {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #111111;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 8px 16px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   3 · THE COLLECTION — 3 featured pieces
+   ══════════════════════════════════════════════════════════════ */
+.home-collection {
+  padding: 160px 64px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.home-collection__header {
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.home-collection__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+
+.home-collection__item {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.home-collection__media {
+  position: relative;
+  overflow: hidden;
+  background: #f4f4f4;
+}
+
+.home-collection__media img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  display: block;
+  transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.home-collection__media:hover img {
+  transform: scale(1.04);
+}
+
+.home-collection__info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.home-collection__num {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: #999999;
+}
+
+.home-collection__title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(22px, 2vw, 28px);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #111111;
+  margin: 0;
+}
+
+.home-collection__info .home-body-text {
+  max-width: 400px;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   4 · THE PROCESS — Visual timeline
+   ══════════════════════════════════════════════════════════════ */
+.home-process {
+  padding: 160px 64px;
+  max-width: 1600px;
+  margin: 0 auto;
+  border-top: 1px solid #EBEBEB;
+}
+
+.home-process__header {
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.home-process__steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 48px;
+}
+
+.home-process__step {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+.home-process__step::after {
+  content: '';
+  position: absolute;
+  top: 24px;
+  right: -24px;
+  width: 1px;
+  height: calc(100% - 24px);
+  background: #EBEBEB;
+}
+
+.home-process__step:last-child::after {
+  display: none;
+}
+
+.home-process__num {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: #999999;
+}
+
+.home-process__title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(20px, 1.8vw, 26px);
+  font-weight: 400;
+  color: #111111;
+  margin: 0;
+}
+
+.home-process__step .home-body-text {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   5 · THE ARTISAN — Personal story
+   ══════════════════════════════════════════════════════════════ */
+.home-artisan {
+  padding: 160px 64px;
+  max-width: 1600px;
+  margin: 0 auto;
+  border-top: 1px solid #EBEBEB;
+}
+
+.home-artisan__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 120px;
+  align-items: start;
+}
+
+.home-artisan__media {
+  position: relative;
+  overflow: hidden;
+  background: #f4f4f4;
+}
+
+.home-artisan__media img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  display: block;
+  transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.home-artisan__media:hover img {
+  transform: scale(1.04);
+}
+
+.home-artisan__content {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.home-artisan__divider {
+  width: 48px;
+  height: 1px;
+  background: #111111;
+  margin: 8px 0;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   6 · MATERIALS — Yarn showcase
+   ══════════════════════════════════════════════════════════════ */
+.home-materials {
+  padding: 160px 64px;
+  max-width: 1600px;
+  margin: 0 auto;
+  border-top: 1px solid #EBEBEB;
+}
+
+.home-materials__header {
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.home-materials__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+.home-materials__item {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.home-materials__media {
+  position: relative;
+  overflow: hidden;
+  background: #f4f4f4;
+}
+
+.home-materials__media img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+  transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.home-materials__media:hover img {
+  transform: scale(1.04);
+}
+
+.home-materials__title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(22px, 2vw, 28px);
+  font-weight: 400;
+  color: #111111;
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   7 · BESPOKE — Commission CTA
+   ══════════════════════════════════════════════════════════════ */
+.home-bespoke {
+  padding: 180px 64px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  border-top: 1px solid #EBEBEB;
+}
+
+.home-bespoke__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.home-bespoke .home-heading-xl {
+  margin-bottom: 8px;
+}
+
+.home-bespoke .home-body-text--lg {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   8 · CLOSING MANIFESTO
+   ══════════════════════════════════════════════════════════════ */
+.home-manifesto {
+  padding: 160px 64px;
+  text-align: center;
+  background: #111111;
+}
+
+.home-manifesto__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.home-manifesto__headline {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(42px, 5.5vw, 88px);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: #ffffff;
+  margin: 0;
+}
+
+.home-manifesto__headline em {
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 1200px) {
+  .home-collection {
+    padding: 120px 48px;
+  }
+  .home-collection__grid {
+    gap: 32px;
+  }
+  .home-process {
+    padding: 120px 48px;
+  }
+  .home-process__steps {
+    gap: 32px;
+  }
+  .home-artisan {
+    padding: 120px 48px;
+  }
+  .home-artisan__grid {
+    gap: 80px;
+  }
+  .home-materials {
+    padding: 120px 48px;
+  }
+  .home-materials__grid {
+    gap: 48px;
+  }
+  .home-bespoke {
+    padding: 140px 48px;
+  }
+  .home-manifesto {
+    padding: 140px 48px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .home-hero__media {
+    height: 75vh;
+    min-height: 500px;
+  }
+  .home-hero__caption {
+    left: 48px;
+    bottom: 24px;
+  }
+  .home-collection__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .home-process__steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+  .home-process__step::after {
+    display: none;
+  }
+  .home-artisan__grid {
+    grid-template-columns: 1fr;
+    gap: 64px;
+  }
+  .home-artisan__content {
+    padding-top: 0;
+  }
+  .home-materials__grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-opening {
+    padding: 80px 24px;
+  }
+
+  .home-hero__media {
+    height: 65vh;
+    min-height: 400px;
+  }
+  .home-hero__caption {
+    left: 24px;
+    bottom: 20px;
+  }
+  .home-hero__caption span {
+    font-size: 9px;
+    padding: 6px 12px;
+  }
+
+  .home-collection {
+    padding: 80px 24px;
+  }
+  .home-collection__grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .home-collection__header {
+    margin-bottom: 48px;
+  }
+
+  .home-process {
+    padding: 80px 24px;
+  }
+  .home-process__header {
+    margin-bottom: 48px;
+  }
+  .home-process__steps {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .home-artisan {
+    padding: 80px 24px;
+  }
+  .home-artisan__grid {
+    gap: 48px;
+  }
+
+  .home-materials {
+    padding: 80px 24px;
+  }
+  .home-materials__header {
+    margin-bottom: 48px;
+  }
+  .home-materials__grid {
+    gap: 48px;
+  }
+
+  .home-bespoke {
+    padding: 100px 24px;
+  }
+
+  .home-manifesto {
+    padding: 100px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-opening {
+    padding: 64px 20px;
+  }
+  .home-hero__media {
+    height: 55vh;
+    min-height: 320px;
+  }
+  .home-collection {
+    padding: 64px 20px;
+  }
+  .home-process {
+    padding: 64px 20px;
+  }
+  .home-artisan {
+    padding: 64px 20px;
+  }
+  .home-materials {
+    padding: 64px 20px;
+  }
+  .home-bespoke {
+    padding: 80px 20px;
+  }
+  .home-manifesto {
+    padding: 80px 20px;
+  }
+}
