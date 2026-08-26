@@ -1,15 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import EditorialImage from '../components/EditorialImage';
+import './Home.css';
 
-const WHATSAPP = 'https://wa.me/254757900294?text=' + encodeURIComponent("Hi! I'd like to place a custom order with Just For Yarns.");
+const WHATSAPP = 'https://wa.me/254757900294?text=' + encodeURIComponent("Hi Fiona! I'd like to place a custom order with Just For Yarns.");
 
-const SHOP_HERO = '/logo&images/heroyarn.jpg';
-
-/* INSPOIMAGES for shop categories */
 const AMIGURUMI   = '/logo&images/INSPOIMAGES/peoplewearingtheminspos/Crochet cat beanie.jfif';
 const WEARABLES   = '/logo&images/INSPOIMAGES/peoplewearingtheminspos/Crochet granny square cropped sweater.jfif';
-const BLANKETS    = '/logo&images/INSPOIMAGES/download (2).jfif';
+const BLANKETS    = '/logo&images/INSPOIMAGES/peoplewearingtheminspos/Crochet Bubu gown.jfif';
 const TOTES       = '/logo&images/INSPOIMAGES/peoplewearingtheminspos/Crochet footies_socks.jfif';
 const HOME_ACCENTS = '/logo&images/INSPOIMAGES/peoplewearingtheminspos/crochet set handmade with love.jfif';
 const GIFT_SETS   = '/logo&images/INSPOIMAGES/peoplewearingtheminspos/crochet wine red ruffle hat.jfif';
@@ -19,121 +15,64 @@ const categories = [
     num: '01',
     name: 'Amigurumi & Plush',
     desc: 'Sculptural plush figures stitched loop by loop — each one a singular object of gentle art.',
-    price: 'From KSh 1,500',
     img: AMIGURUMI,
   },
   {
     num: '02',
     name: 'Wearables & Knitwear',
-    desc: 'Scarves, beanies, cardigans, and tops — tactile pieces made for the body and for the eye.',
-    price: 'From KSh 800',
+    desc: 'Scarves, beanies, cardigans, and gowns — tactile pieces tailored for the body.',
     img: WEARABLES,
   },
   {
     num: '03',
     name: 'Blankets & Throws',
-    desc: 'Heirloom-quality throws in warm, breathable cotton. Custom dimensions available.',
-    price: 'From KSh 3,000',
+    desc: 'Heirloom-quality throws in warm, breathable organic cotton fibers.',
     img: BLANKETS,
   },
   {
     num: '04',
-    name: 'Totes & Accessories',
-    desc: 'Open-mesh market totes, coin purses, and shoulder bags — form married to function.',
-    price: 'From KSh 600',
+    name: 'Accessories & Totes',
+    desc: 'Market totes, coin purses, and shoulder bags — form married to daily function.',
     img: TOTES,
   },
   {
     num: '05',
     name: 'Home Accents',
-    desc: 'Decorative coasters, wall hangings, and cushion covers that bring warmth to any interior.',
-    price: 'From KSh 500',
+    desc: 'Decorative coasters, wall tapestries, and cushion covers for warm interior accents.',
     img: HOME_ACCENTS,
   },
   {
     num: '06',
     name: 'Gift Sets',
-    desc: 'Curated sets, beautifully packaged — the perfect gift for someone who appreciates the handmade.',
-    price: 'From KSh 2,000',
+    desc: 'Curated handmade sets beautifully packaged for thoughtful gifting.',
     img: GIFT_SETS,
   },
 ];
 
 const Shop: React.FC = () => {
   return (
-    <div className="pg-shop">
+    <div className="home-editorial">
 
-      {/* ── 1. LV-STYLE EDITORIAL TWIN TILES ────────────────────── */}
-      <section className="lv-twin-tiles">
-        <div className="lv-tile">
-          <div className="lv-tile__media">
-            <EditorialImage
-              src={AMIGURUMI}
-              alt="Amigurumi"
-              aspectRatio="4/5"
-              fit="cover"
-              focalPoint={{ x: 50, y: 30 }}
-            />
-          </div>
-          <div className="lv-tile__copy">
-            <p className="lv-tile__label">New In</p>
-            <h2 className="lv-tile__heading">Amigurumi<br />& Plush Figures</h2>
-            <p className="lv-body-text" style={{ marginBottom: '24px' }}>
-              Sculptural plush figures stitched loop by loop — each one a singular object of gentle art. Perfect for gifts, collectors, or anyone who appreciates the handmade.
-            </p>
-            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="lv-text-link">
-              Inquire Now
-            </a>
-          </div>
+      {/* ── 1. COLLECTIONS SHOWCASE ───────────────────────────── */}
+      <section className="exhibit-grid-section" style={{ marginTop: '60px', marginBottom: '140px' }}>
+        <div className="exhibit-grid-section__header">
+          <span className="meta-eyebrow">[ COLLECTIONS ARCHIVE ]</span>
+          <h1 className="editorial-heading">Shop Handcrafted Works</h1>
         </div>
 
-        <div className="lv-tile">
-          <div className="lv-tile__media">
-            <EditorialImage
-              src={WEARABLES}
-              alt="Wearables"
-              aspectRatio="4/5"
-              fit="cover"
-              focalPoint={{ x: 50, y: 30 }}
-            />
-          </div>
-          <div className="lv-tile__copy">
-            <p className="lv-tile__label">Savoir-Faire</p>
-            <h2 className="lv-tile__heading">Wearables<br />& Knitwear</h2>
-            <p className="lv-body-text" style={{ marginBottom: '24px' }}>
-              Scarves, beanies, cardigans, and tops — tactile pieces made for the body and for the eye. Each garment is tailored to your exact measurements.
-            </p>
-            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="lv-text-link">
-              Inquire Now
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 2. LV-STYLE 3-TILE CATEGORY GRID ────────────────────── */}
-      <section className="lv-trio-section">
-        <div className="lv-trio-header">
-          <p className="lv-kicker">All Collections</p>
-          <h2 className="lv-heading-md">Explore the Full Range</h2>
-        </div>
-        <div className="lv-trio-grid">
-          {categories.slice(0, 3).map((cat) => (
-            <div key={cat.num} className="lv-trio-item">
-              <div className="lv-trio-item__media">
-                <EditorialImage
-                  src={cat.img}
-                  alt={cat.name}
-                  aspectRatio="3/4"
-                  fit="cover"
-                  focalPoint={{ x: 50, y: 30 }}
-                />
+        <div className="exhibit-grid">
+          {categories.map((cat) => (
+            <div key={cat.num} className="exhibit-item">
+              <div className="museum-frame frame-3-4">
+                <img src={cat.img} alt={cat.name} className="museum-media" />
               </div>
-              <div className="lv-trio-item__copy">
-                <h3 className="lv-trio-item__name">{cat.name}</h3>
-                <p className="lv-body-text" style={{ marginBottom: '12px' }}>{cat.desc}</p>
-                <span className="shop-price">{cat.price}</span>
-                <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="lv-text-link sm">
-                  Inquire
+              <div className="service-card__content">
+                <span className="meta-label">{cat.name}</span>
+                <p className="service-card__desc" style={{ fontSize: '13px', marginTop: '6px', marginBottom: '14px' }}>
+                  {cat.desc}
+                </p>
+                <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="editorial-action-link">
+                  <span>INQUIRE NOW</span>
                 </a>
               </div>
             </div>
@@ -141,76 +80,22 @@ const Shop: React.FC = () => {
         </div>
       </section>
 
-      {/* ── 3. LV-STYLE FEATURE PANEL — REACH OUT ─────────────────── */}
-      <section className="lv-feature-panel reverse">
-        <div className="lv-feature-panel__copy">
-          <p className="lv-kicker">Reach Out</p>
-          <h2 className="lv-heading-lg">
-            Something entirely<br /><em>your own.</em>
+      {/* ── 2. BESPOKE CALLOUT BANNER ─────────────────────────── */}
+      <section className="bespoke-wide-showcase" style={{ marginTop: '100px', marginBottom: '140px' }}>
+        <div className="bespoke-wide-showcase__text-block">
+          <h2 className="editorial-heading">
+            Need Something Entirely Unique?
           </h2>
-          <p className="lv-body-text">
-            Share a reference image, a color palette, or simply describe what you're imagining. Every bespoke piece is a collaboration — your vision, my hands.
+          <p className="editorial-manifesto">
+            Fiona translates your Pinterest moodboards, color choices, and measurements into a singular hand-crafted garment.
           </p>
-          <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
-            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="lv-cta-ghost">
-              Reach Out
-            </a>
-            <Link to="/about" className="lv-text-link">
-              About the Atelier
-            </Link>
-          </div>
-        </div>
-        <div className="lv-feature-panel__media">
-          <EditorialImage
-            src={SHOP_HERO}
-            alt="Bespoke Commission"
-            aspectRatio="3/4"
-            fit="cover"
-            focalPoint={{ x: 50, y: 30 }}
-          />
-        </div>
-      </section>
-
-      {/* ── 4. LV-STYLE 3-TILE CATEGORY GRID — SECOND ROW ───────── */}
-      <section className="lv-trio-section" style={{ borderTop: '1px solid #EBEBEB' }}>
-        <div className="lv-trio-header">
-          <p className="lv-kicker">More Collections</p>
-          <h2 className="lv-heading-md">Continue Exploring</h2>
-        </div>
-        <div className="lv-trio-grid">
-          {categories.slice(3, 6).map((cat) => (
-            <div key={cat.num} className="lv-trio-item">
-              <div className="lv-trio-item__media">
-                <EditorialImage
-                  src={cat.img}
-                  alt={cat.name}
-                  aspectRatio="3/4"
-                  fit="cover"
-                  focalPoint={{ x: 50, y: 30 }}
-                />
-              </div>
-              <div className="lv-trio-item__copy">
-                <h3 className="lv-trio-item__name">{cat.name}</h3>
-                <p className="lv-body-text" style={{ marginBottom: '12px' }}>{cat.desc}</p>
-                <span className="shop-price">{cat.price}</span>
-                <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="lv-text-link sm">
-                  Inquire
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── 5. LV-STYLE CLOSING MANIFESTO ───────────────────────── */}
-      <section className="lv-manifesto">
-        <div className="lv-manifesto__inner">
-          <p className="lv-kicker light">Just For Yarns · Nairobi</p>
-          <h2 className="lv-manifesto__headline">
-            Made by hand.<br /><em>Made with love.</em>
-          </h2>
-          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="lv-cta-ghost light">
-            Reach Out
+          <a
+            href={WHATSAPP}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="editorial-action-link editorial-action-link--large"
+          >
+            <span>COMMISSION VIA WHATSAPP →</span>
           </a>
         </div>
       </section>

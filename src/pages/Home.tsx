@@ -1,161 +1,293 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import './Home.css';
 
-const WHATSAPP = 'https://wa.me/254757900294?text=' + encodeURIComponent("Hi! I'd like to discuss a bespoke commission with Just For Yarns.");
+const WHATSAPP_LINK = 'https://wa.me/254757900294?text=' + encodeURIComponent("Hi! I'd like to initiate a bespoke commission with Just For Yarns.");
 
-/* ── IMAGES ─────────────────────────────────────────────────── */
-const HERO         = '/logo&images/H.jpg';
-const YARN_PALETTE = '/logo&images/colorfulyarn.jfif';
-const CRAFT_IMG    = '/logo&images/yarninasack.jfif';
+/* ── LOCAL MEDIA PATHS (from public/logo&images) ──────────────── */
+const HERO_VIDEO           = '/logo&images/video/herosection.mp4';
+const CAMPAIGN_VIDEO_1     = '/logo&images/video/dudefromherosection.mp4';
+const PROCESS_FILM         = '/logo&images/video/yarnonshelf.mp4';
+const MODELLING_VIDEO      = '/logo&images/video/twinsmodellingsweaters.mp4';
+const MENSWEAR_VIDEO       = '/logo&images/video/blackguysinyarn (1).mp4';
+const CAMPAIGN_VIDEO_2     = '/logo&images/video/14882728_3840_2160_30fps.mp4';
+const BESPOKE_FILM         = '/logo&images/video/whitegirlsmodellling.mp4';
 
-const AMIGURUMI   = '/logo&images/INSPOIMAGES/peoplewearingtheminspos/Crochet cat beanie.jfif';
-const WEARABLES   = '/logo&images/INSPOIMAGES/peoplewearingtheminspos/Crochet granny square cropped sweater.jfif';
-const HOME_ACCENT = '/logo&images/INSPOIMAGES/peoplewearingtheminspos/Crochet Bubu gown.jfif';
+const FIONA_PORTRAIT       = '/logo&images/meforhome.jpeg';
+const PANORAMA_PHOTO       = '/logo&images/heroyarn.jPG';
+const GALLERY_IMG_1        = '/logo&images/INSPOIMAGES/peoplewearingtheminspos/Crochet granny square cropped sweater.jfif';
+const GALLERY_IMG_4        = '/logo&images/INSPOIMAGES/peoplewearingtheminspos/Crochet Bubu gown.jfif';
 
-/* ── COMPONENT ──────────────────────────────────────────────── */
+const EXHIBIT_ITEM_1       = '/logo&images/INSPOIMAGES/peoplewearingtheminspos/Crochet cat beanie.jfif';
+const EXHIBIT_ITEM_2       = '/logo&images/INSPOIMAGES/peoplewearingtheminspos/crochet wine red ruffle hat.jfif';
+const EXHIBIT_ITEM_3       = '/logo&images/INSPOIMAGES/peoplewearingtheminspos/Crochet hexagon cardigan.jfif';
+
 const Home: React.FC = () => {
-
   return (
-    <main className="home">
+    <div className="home-editorial">
 
       {/* ══════════════════════════════════════════════════════════
-          1 · HERO — Full-bleed video-style background
-         ══════════════════════════════════════════════════════════ */}
-      <section className="home-hero">
-        <div className="home-hero__media">
-          <img src={HERO} alt="Just For Yarns — SS 2025" />
+          1 · HERO SECTION (100vw x 100vh FULLSCREEN VIDEO)
+          Sleek double-underlined minimalist link at bottom center.
+          ══════════════════════════════════════════════════════════ */}
+      <section className="hero-fullscreen">
+        <div className="hero-fullscreen__media">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="hero-fullscreen__video"
+          >
+            <source src={HERO_VIDEO} type="video/mp4" />
+          </video>
         </div>
-        <div className="home-hero__content">
-          <h2>Just For Yarns</h2>
-          <button className="home-hero__btn">Discover the Collection</button>
+
+        <div className="hero-fullscreen__action">
+          <Link to="/inspo" className="hero-sleek-link">
+            <span className="hero-sleek-link__text">EXPLORE INSPOS →</span>
+            <div className="hero-double-underline">
+              <span className="line-1"></span>
+              <span className="line-2"></span>
+            </div>
+          </Link>
         </div>
       </section>
 
+
       {/* ══════════════════════════════════════════════════════════
-          2 · IMAGE BREAK — Full-bleed with overlay text
-         ══════════════════════════════════════════════════════════ */}
-      <section className="home-image-break">
-        <div className="home-image-break__media">
-          <img src={YARN_PALETTE} alt="The Craft" />
-        </div>
-        <div className="home-image-break__content">
-          <h2>The Art of Slow Fiber</h2>
-          <button className="home-image-break__btn">Discover the Collections</button>
+          2 · CREATOR DIPTYCH (FIONA)
+          ══════════════════════════════════════════════════════════ */}
+      <section className="atelier-diptych-section">
+        <div className="atelier-diptych__grid">
+          
+          <div className="diptych-col diptych-col--portrait">
+            <div className="museum-frame frame-2-3">
+              <img
+                src={FIONA_PORTRAIT}
+                alt="Fiona"
+                className="museum-media"
+              />
+            </div>
+            <div className="frame-meta">
+              <span className="meta-label">Fiona · Founder & Master Artisan</span>
+            </div>
+          </div>
+
+          <div className="diptych-col diptych-col--manifesto">
+            <div className="signature-card">
+              <span className="signature-eyebrow">FIONA</span>
+              
+              <blockquote className="signature-quote">
+                “Every loop is a deliberate act of design. We do not mass-produce garments; 
+                we sculpt tactile art that honors the human form.”
+              </blockquote>
+
+              <Link to="/about" className="editorial-action-link">
+                <span>ABOUT FIONA →</span>
+              </Link>
+            </div>
+          </div>
+
+          <div className="diptych-col diptych-col--process">
+            <div className="museum-frame frame-2-3">
+              <video autoPlay loop muted playsInline className="museum-media">
+                <source src={PROCESS_FILM} type="video/mp4" />
+              </video>
+            </div>
+            <div className="frame-meta">
+              <span className="meta-label">Craft in Motion</span>
+            </div>
+          </div>
+
         </div>
       </section>
 
+
       {/* ══════════════════════════════════════════════════════════
-          3 · SERVICES — 3-column grid
-         ══════════════════════════════════════════════════════════ */}
-      <section className="home-services">
-        <div className="home-services__header">
-          <h2>Services</h2>
-        </div>
-        <div className="home-services__grid">
-          <div className="home-service-card">
-            <div className="home-service-card__media">
-              <img src={AMIGURUMI} alt="Amigurumi" />
-            </div>
-            <div className="home-service-card__content">
-              <h3>Amigurumi & Plush</h3>
-              <p>Sculptural plush figures stitched loop by loop — each one a singular object of gentle art.</p>
-              <button className="home-service-card__btn">Inquire Now</button>
-            </div>
-          </div>
-
-          <div className="home-service-card">
-            <div className="home-service-card__media">
-              <img src={WEARABLES} alt="Wearables" />
-            </div>
-            <div className="home-service-card__content">
-              <h3>Wearables & Knitwear</h3>
-              <p>Scarves, beanies, cardigans, and tops — tactile pieces made for the body and for the eye.</p>
-              <button className="home-service-card__btn">Inquire Now</button>
-            </div>
-          </div>
-
-          <div className="home-service-card">
-            <div className="home-service-card__media">
-              <img src={HOME_ACCENT} alt="Home Accents" />
-            </div>
-            <div className="home-service-card__content">
-              <h3>Home Accents</h3>
-              <p>Decorative pieces that bring warmth and texture to any interior.</p>
-              <button className="home-service-card__btn">Inquire Now</button>
-            </div>
-          </div>
+          3 · CAMPAIGN FILM 01 (100vw FULL-BLEED VIDEO)
+          ══════════════════════════════════════════════════════════ */}
+      <section className="cinematic-break" style={{ marginBottom: '100px' }}>
+        <div className="cinematic-break__frame">
+          <video autoPlay loop muted playsInline className="cinematic-break__video">
+            <source src={CAMPAIGN_VIDEO_1} type="video/mp4" />
+          </video>
         </div>
       </section>
 
+
       {/* ══════════════════════════════════════════════════════════
-          4 · BESPOKE — Commission CTA
-         ══════════════════════════════════════════════════════════ */}
-      <section className="home-bespoke">
-        <div className="home-bespoke__media">
-          <img src={CRAFT_IMG} alt="Bespoke Commission" />
+          4 · EDITORIAL GALLERY GRID (4-ITEM UNIFORM 3/4 ASPECT RATIO)
+          ══════════════════════════════════════════════════════════ */}
+      <section className="editorial-media-grid" style={{ marginTop: '100px', marginBottom: '100px' }}>
+        <div className="editorial-media-grid__header">
+          <h2 className="editorial-heading">Collections</h2>
         </div>
-        <div className="home-bespoke__content">
-          <h2>Bespoke Commissions</h2>
-          <p>Share a Pinterest pin, a sketch, or a simple description. We translate your ideas into a one-of-a-kind handmade piece.</p>
-          <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="home-bespoke__btn">
-            Start a Conversation
+
+        <div className="editorial-media-grid__container">
+          
+          <div className="media-grid-card">
+            <div className="museum-frame frame-3-4">
+              <img src={GALLERY_IMG_1} alt="Knitwear" className="museum-media" />
+            </div>
+            <div className="frame-meta">
+              <span className="meta-label">Granny Square Knitwear</span>
+            </div>
+          </div>
+
+          <div className="media-grid-card">
+            <div className="museum-frame frame-3-4">
+              <video autoPlay loop muted playsInline className="museum-media">
+                <source src={MODELLING_VIDEO} type="video/mp4" />
+              </video>
+            </div>
+            <div className="frame-meta">
+              <span className="meta-label">Sweaters</span>
+            </div>
+          </div>
+
+          <div className="media-grid-card">
+            <div className="museum-frame frame-3-4">
+              <video autoPlay loop muted playsInline className="museum-media">
+                <source src={MENSWEAR_VIDEO} type="video/mp4" />
+              </video>
+            </div>
+            <div className="frame-meta">
+              <span className="meta-label">Menswear</span>
+            </div>
+          </div>
+
+          <div className="media-grid-card">
+            <div className="museum-frame frame-3-4">
+              <img src={GALLERY_IMG_4} alt="Bubu Gown" className="museum-media" />
+            </div>
+            <div className="frame-meta">
+              <span className="meta-label">Bubu Gown</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* ══════════════════════════════════════════════════════════
+          5 · ASYMMETRIC DUAL-FOCUS EXHIBIT (PHOTO & VIDEO PAIR)
+          ══════════════════════════════════════════════════════════ */}
+      <section className="dual-focus-diptych-section">
+        <div className="dual-focus-diptych">
+          
+          <div className="dual-focus-col dual-focus-col--photo">
+            <div className="museum-frame frame-16-9">
+              <img
+                src={PANORAMA_PHOTO}
+                alt="Raw Cotton"
+                className="museum-media"
+              />
+            </div>
+            <div className="frame-meta">
+              <span className="meta-label">Raw Cotton & Yarn</span>
+            </div>
+          </div>
+
+          <div className="dual-focus-col dual-focus-col--video">
+            <div className="museum-frame frame-3-4">
+              <video autoPlay loop muted playsInline className="museum-media">
+                <source src={CAMPAIGN_VIDEO_2} type="video/mp4" />
+              </video>
+            </div>
+            <div className="frame-meta">
+              <span className="meta-label">Hand Spools</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* ══════════════════════════════════════════════════════════
+          6 · ARCHIVE GRID
+          ══════════════════════════════════════════════════════════ */}
+      <section className="exhibit-grid-section" style={{ marginTop: '140px' }}>
+        <div className="exhibit-grid-section__header">
+          <h2 className="editorial-heading">Archive</h2>
+        </div>
+
+        <div className="exhibit-grid">
+
+          <div className="exhibit-item">
+            <div className="museum-frame frame-3-4">
+              <img
+                src={EXHIBIT_ITEM_1}
+                alt="Cat Beanie"
+                className="museum-media"
+              />
+            </div>
+            <div className="frame-meta">
+              <span className="meta-label">Cat Beanie</span>
+            </div>
+          </div>
+
+          <div className="exhibit-item">
+            <div className="museum-frame frame-1-1">
+              <img
+                src={EXHIBIT_ITEM_2}
+                alt="Ruffle Beanie"
+                className="museum-media"
+              />
+            </div>
+            <div className="frame-meta">
+              <span className="meta-label">Ruffle Beanie</span>
+            </div>
+          </div>
+
+          <div className="exhibit-item">
+            <div className="museum-frame frame-3-4">
+              <img
+                src={EXHIBIT_ITEM_3}
+                alt="Hexagon Cardigan"
+                className="museum-media"
+              />
+            </div>
+            <div className="frame-meta">
+              <span className="meta-label">Hexagon Cardigan</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* ══════════════════════════════════════════════════════════
+          7 · BESPOKE COMMISSIONS (EXACT MINIMAL WORDING)
+          Heading: "BESPOKE"
+          ══════════════════════════════════════════════════════════ */}
+      <section className="bespoke-wide-showcase">
+        <div className="bespoke-wide-showcase__video-frame">
+          <video autoPlay loop muted playsInline className="bespoke-wide-showcase__video">
+            <source src={BESPOKE_FILM} type="video/mp4" />
+          </video>
+        </div>
+        
+        <div className="bespoke-wide-showcase__text-block">
+          <h2 className="editorial-heading">
+            BESPOKE
+          </h2>
+          <p className="editorial-manifesto">
+            Custom hand-crafted pieces tailored to your silhouette. 
+            Bring your vision, Pinterest board, or measurements.
+          </p>
+          <a
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="editorial-action-link editorial-action-link--large"
+          >
+            <span>WHATSAPP COMMISSIONS →</span>
           </a>
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════════════
-          5 · LINKS — 4-column footer links
-         ══════════════════════════════════════════════════════════ */}
-      <section className="home-links">
-        <hr className="home-links__hr" />
-        <div className="home-links__container">
-          <div className="home-links__column">
-            <div className="home-links__head">HELP</div>
-            <div className="home-links__cell"><a href={WHATSAPP} target="_blank" rel="noopener noreferrer">You can <span>call</span> or <span>email us</span>.</a></div>
-            <div className="home-links__cell"><a href="#">FAQ's</a></div>
-            <div className="home-links__cell"><a href="#">Product Care</a></div>
-            <div className="home-links__cell"><a href="#">Stores</a></div>
-          </div>
-          <div className="home-links__column">
-            <div className="home-links__head">SERVICES</div>
-            <div className="home-links__cell"><a href="#">Repairs</a></div>
-            <div className="home-links__cell"><a href="#">Personalization</a></div>
-            <div className="home-links__cell"><a href="#">Art of Gifting</a></div>
-            <div className="home-links__cell"><a href="#">Download our Apps</a></div>
-          </div>
-          <div className="home-links__column">
-            <div className="home-links__head">ABOUT JUST FOR YARNS</div>
-            <div className="home-links__cell"><a href="#">Fashion Shows</a></div>
-            <div className="home-links__cell"><a href="#">Art & Culture</a></div>
-            <div className="home-links__cell"><a href="#">The Atelier</a></div>
-            <div className="home-links__cell"><a href="#">Sustainability</a></div>
-            <div className="home-links__cell"><a href="#">Latest News</a></div>
-            <div className="home-links__cell"><a href="#">Careers</a></div>
-          </div>
-          <div className="home-links__column">
-            <div className="home-links__head">CONNECT</div>
-            <div className="home-links__cell"><a href="#"><span>Sign up</span> for first access to latest collections, campaigns and videos.</a></div>
-            <div className="home-links__cell"><a href="#">Follow Us</a></div>
-          </div>
-        </div>
-      </section>
-
-      <hr className="home-links__hr" />
-
-      {/* ══════════════════════════════════════════════════════════
-          6 · FOOTER
-         ══════════════════════════════════════════════════════════ */}
-      <footer className="home-footer">
-        <a href="#" className="home-footer__lang"><i className="fa-solid fa-globe"></i><span>ENGLISH (INTL)</span></a>
-        <ul>
-          <li><a href="#">Sitemap</a></li>
-          <li><a href="#">Legal & privacy</a></li>
-          <li><a href="#">Cookies</a></li>
-        </ul>
-      </footer>
-
-      <div className="home-footer__logo">Just For Yarns</div>
-
-    </main>
+    </div>
   );
 };
 

@@ -18,13 +18,16 @@ const ScrollToTop: React.FC = () => {
 };
 
 const AppContent: React.FC = () => {
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       {/* Sticky Header */}
       <Header />
       
       {/* Router body */}
-      <main style={{ flex: 1, marginTop: '68px' }}>
+      <main style={{ flex: 1, marginTop: isHome ? '0px' : '68px' }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
