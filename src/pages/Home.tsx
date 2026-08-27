@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 
 const WHATSAPP_LINK = 'https://wa.me/254757900294?text=' + encodeURIComponent("Hi! I'd like to initiate a bespoke commission with Just For Yarns.");
 
-/* ── LOCAL MEDIA PATHS (from public/logo&images) ──────────────── */
+/* ── LOCAL MEDIA PATHS ──────────────── */
 const HERO_VIDEO           = '/logo&images/video/herosection.mp4';
 const CAMPAIGN_VIDEO_1     = '/logo&images/video/dudefromherosection.mp4';
 const PROCESS_FILM         = '/logo&images/video/yarnonshelf.mp4';
@@ -22,13 +22,52 @@ const EXHIBIT_ITEM_1       = '/logo&images/INSPOIMAGES/peoplewearingtheminspos/C
 const EXHIBIT_ITEM_2       = '/logo&images/INSPOIMAGES/peoplewearingtheminspos/crochet wine red ruffle hat.jfif';
 const EXHIBIT_ITEM_3       = '/logo&images/INSPOIMAGES/peoplewearingtheminspos/Crochet hexagon cardigan.jfif';
 
+/* Lazy Video Component that only streams when scrolled into view */
+const LazyVideo: React.FC<{ src: string; className?: string }> = ({ src, className }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <video
+      ref={videoRef}
+      loop
+      muted
+      playsInline
+      preload="metadata"
+      className={className}
+    >
+      <source src={src} type="video/mp4" />
+    </video>
+  );
+};
+
 const Home: React.FC = () => {
   return (
     <div className="home-editorial">
 
       {/* ══════════════════════════════════════════════════════════
           1 · HERO SECTION (100vw x 100vh FULLSCREEN VIDEO)
-          Sleek double-underlined minimalist link at bottom center.
+          High-priority instant load for Hero
           ══════════════════════════════════════════════════════════ */}
       <section className="hero-fullscreen">
         <div className="hero-fullscreen__media">
@@ -37,6 +76,7 @@ const Home: React.FC = () => {
             loop
             muted
             playsInline
+            preload="auto"
             className="hero-fullscreen__video"
           >
             <source src={HERO_VIDEO} type="video/mp4" />
@@ -67,6 +107,7 @@ const Home: React.FC = () => {
                 src={FIONA_PORTRAIT}
                 alt="Fiona"
                 className="museum-media"
+                loading="lazy"
               />
             </div>
             <div className="frame-meta">
@@ -91,9 +132,7 @@ const Home: React.FC = () => {
 
           <div className="diptych-col diptych-col--process">
             <div className="museum-frame frame-2-3">
-              <video autoPlay loop muted playsInline className="museum-media">
-                <source src={PROCESS_FILM} type="video/mp4" />
-              </video>
+              <LazyVideo src={PROCESS_FILM} className="museum-media" />
             </div>
             <div className="frame-meta">
               <span className="meta-label">Craft in Motion</span>
@@ -105,13 +144,11 @@ const Home: React.FC = () => {
 
 
       {/* ══════════════════════════════════════════════════════════
-          3 · CAMPAIGN FILM 01 (100vw FULL-BLEED VIDEO)
+          3 · CAMPAIGN FILM 01 (LAZY STREAMED FULL-BLEED VIDEO)
           ══════════════════════════════════════════════════════════ */}
       <section className="cinematic-break" style={{ marginBottom: '100px' }}>
         <div className="cinematic-break__frame">
-          <video autoPlay loop muted playsInline className="cinematic-break__video">
-            <source src={CAMPAIGN_VIDEO_1} type="video/mp4" />
-          </video>
+          <LazyVideo src={CAMPAIGN_VIDEO_1} className="cinematic-break__video" />
         </div>
       </section>
 
@@ -128,7 +165,7 @@ const Home: React.FC = () => {
           
           <div className="media-grid-card">
             <div className="museum-frame frame-3-4">
-              <img src={GALLERY_IMG_1} alt="Knitwear" className="museum-media" />
+              <img src={GALLERY_IMG_1} alt="Knitwear" className="museum-media" loading="lazy" />
             </div>
             <div className="frame-meta">
               <span className="meta-label">Granny Square Knitwear</span>
@@ -137,9 +174,7 @@ const Home: React.FC = () => {
 
           <div className="media-grid-card">
             <div className="museum-frame frame-3-4">
-              <video autoPlay loop muted playsInline className="museum-media">
-                <source src={MODELLING_VIDEO} type="video/mp4" />
-              </video>
+              <LazyVideo src={MODELLING_VIDEO} className="museum-media" />
             </div>
             <div className="frame-meta">
               <span className="meta-label">Sweaters</span>
@@ -148,9 +183,7 @@ const Home: React.FC = () => {
 
           <div className="media-grid-card">
             <div className="museum-frame frame-3-4">
-              <video autoPlay loop muted playsInline className="museum-media">
-                <source src={MENSWEAR_VIDEO} type="video/mp4" />
-              </video>
+              <LazyVideo src={MENSWEAR_VIDEO} className="museum-media" />
             </div>
             <div className="frame-meta">
               <span className="meta-label">Menswear</span>
@@ -159,7 +192,7 @@ const Home: React.FC = () => {
 
           <div className="media-grid-card">
             <div className="museum-frame frame-3-4">
-              <img src={GALLERY_IMG_4} alt="Bubu Gown" className="museum-media" />
+              <img src={GALLERY_IMG_4} alt="Bubu Gown" className="museum-media" loading="lazy" />
             </div>
             <div className="frame-meta">
               <span className="meta-label">Bubu Gown</span>
@@ -182,6 +215,7 @@ const Home: React.FC = () => {
                 src={PANORAMA_PHOTO}
                 alt="Raw Cotton"
                 className="museum-media"
+                loading="lazy"
               />
             </div>
             <div className="frame-meta">
@@ -191,9 +225,7 @@ const Home: React.FC = () => {
 
           <div className="dual-focus-col dual-focus-col--video">
             <div className="museum-frame frame-3-4">
-              <video autoPlay loop muted playsInline className="museum-media">
-                <source src={CAMPAIGN_VIDEO_2} type="video/mp4" />
-              </video>
+              <LazyVideo src={CAMPAIGN_VIDEO_2} className="museum-media" />
             </div>
             <div className="frame-meta">
               <span className="meta-label">Hand Spools</span>
@@ -220,6 +252,7 @@ const Home: React.FC = () => {
                 src={EXHIBIT_ITEM_1}
                 alt="Cat Beanie"
                 className="museum-media"
+                loading="lazy"
               />
             </div>
             <div className="frame-meta">
@@ -233,6 +266,7 @@ const Home: React.FC = () => {
                 src={EXHIBIT_ITEM_2}
                 alt="Ruffle Beanie"
                 className="museum-media"
+                loading="lazy"
               />
             </div>
             <div className="frame-meta">
@@ -246,6 +280,7 @@ const Home: React.FC = () => {
                 src={EXHIBIT_ITEM_3}
                 alt="Hexagon Cardigan"
                 className="museum-media"
+                loading="lazy"
               />
             </div>
             <div className="frame-meta">
@@ -258,14 +293,11 @@ const Home: React.FC = () => {
 
 
       {/* ══════════════════════════════════════════════════════════
-          7 · BESPOKE COMMISSIONS (EXACT MINIMAL WORDING)
-          Heading: "BESPOKE"
+          7 · BESPOKE COMMISSIONS
           ══════════════════════════════════════════════════════════ */}
       <section className="bespoke-wide-showcase">
         <div className="bespoke-wide-showcase__video-frame">
-          <video autoPlay loop muted playsInline className="bespoke-wide-showcase__video">
-            <source src={BESPOKE_FILM} type="video/mp4" />
-          </video>
+          <LazyVideo src={BESPOKE_FILM} className="bespoke-wide-showcase__video" />
         </div>
         
         <div className="bespoke-wide-showcase__text-block">
