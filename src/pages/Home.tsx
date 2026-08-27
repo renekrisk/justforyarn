@@ -9,7 +9,7 @@ const HERO_VIDEO           = '/logo&images/video/herosection.mp4';
 const CAMPAIGN_VIDEO_1     = '/logo&images/video/dudefromherosection.mp4';
 const PROCESS_FILM         = '/logo&images/video/yarnonshelf.mp4';
 const MODELLING_VIDEO      = '/logo&images/video/twinsmodellingsweaters.mp4';
-const MENSWEAR_VIDEO       = '/logo&images/video/blackguysinyarn (1).mp4';
+const MENSWEAR_VIDEO       = '/logo&images/video/blackguysinyarn.mp4';
 const CAMPAIGN_VIDEO_2     = '/logo&images/video/14882728_3840_2160_30fps.mp4';
 const BESPOKE_FILM         = '/logo&images/video/whitegirlsmodellling.mp4';
 
